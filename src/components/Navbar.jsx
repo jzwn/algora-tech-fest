@@ -96,47 +96,39 @@ export default function Navbar({ onTriggerNotice }) {
 
       {/* Mobile menu */}
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
-        {links.map(l => (
-          <a
-            key={l}
-            href={`#${l.toLowerCase()}`}
-            onClick={() => setMenuOpen(false)}
-          >
-            {l}
-          </a>
-        ))}
+        <div className="mobile-menu-links">
+          {links.map(l => (
+            <a
+              key={l}
+              href={`#${l.toLowerCase()}`}
+              className="mobile-nav-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span>{l}</span>
+              <span className="mobile-nav-link-arrow">→</span>
+            </a>
+          ))}
+        </div>
+
         <button
+          className="mobile-notif-btn"
           onClick={() => {
             setMenuOpen(false);
             setIsNotificationOpen(true);
-          }}
-          style={{
-            margin: '8px 0',
-            padding: '10px',
-            background: 'rgba(212, 175, 55, 0.15)',
-            border: '1px solid var(--gold)',
-            color: 'var(--gold)',
-            borderRadius: '6px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            fontFamily: 'var(--mono)',
-            fontSize: '0.75rem',
-            letterSpacing: '1px'
           }}
         >
           <span>🔔</span>
           <span>View Notifications</span>
         </button>
+
         <button
-          className="nav-register"
+          className="mobile-register-btn"
           onClick={() => {
             setMenuOpen(false);
             if (onTriggerNotice) onTriggerNotice();
           }}
         >
-          Register
+          Register Now →
         </button>
       </div>
     </>
