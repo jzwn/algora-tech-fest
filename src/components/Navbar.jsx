@@ -1,0 +1,144 @@
+import { useState, useEffect } from 'react';
+import { useMessaging } from '../hooks/useMessaging';
+import NotificationDropdown from './NotificationDropdown';
+
+export default function Navbar({ onTriggerNotice }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const { permissionStatus, requestPermission } = useMessaging();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const toggleNotifications = (e) => {
+    e.stopPropagation();
+    setIsNotificationOpen(prev => !prev);
+  };
+
+  const links = ['About', 'Events', 'Schedule', 'Gallery', 'Sponsors', 'Contact'];
+
+  return (
+    <>
+      <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
+        <div className="nav-inner">
+          <a href="#" className="nav-logo">
+            <img src="/algora_logo.png" alt="Logo" style={{ width: '32px', height: '32px' }} />
+            <span className="nav-logo-text">ALGORA<span className="nav-logo-year"> '26</span></span>
+          </a>
+
+          {/* Liquid Glass Navigation Dock (Header Only) */}
+          <ul className="nav-links nav-liquid-dock">
+            {links.map(l => (
+              <li key={l}>
+                <a href={`#${l.toLowerCase()}`} className="nav-liquid-btn">
+                  <span className="nav-liquid-btn-text">{l}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="nav-right">
+            {/* Notification Bell Anchor Wrapper */}
+            <div className="nav-notif-anchor">
+              <button
+                className={`nav-notif-btn-round ${isNotificationOpen ? 'active' : ''}`}
+                onClick={toggleNotifications}
+                title="View Notifications & Announcements"
+                aria-label="Toggle notifications dropdown"
+                aria-expanded={isNotificationOpen}
+              >
+                <span className="nav-notif-bell-icon">🔔</span>
+                <span className="nav-notif-badge-dot" />
+              </button>
+
+              {/* Anchored Liquid Glass Notification List Dropdown */}
+              <NotificationDropdown
+                isOpen={isNotificationOpen}
+                onClose={() => setIsNotificationOpen(false)}
+              />
+            </div>
+
+            <button
+              className="nav-register"
+              onClick={onTriggerNotice}
+            >
+              Register
+            </button>
+            
+            <div style={{
+              marginLeft: '16px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-end',
+              lineHeight: '1.1',
+              borderLeft: '1px solid rgba(255,255,255,0.1)',
+              paddingLeft: '16px'
+            }}>
+              <span style={{ fontFamily: 'var(--condensed)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '1px', color: 'var(--white)' }}>St.George's</span>
+              <span style={{ fontFamily: 'var(--condensed)', fontSize: '0.55rem', letterSpacing: '0.5px', color: 'var(--gray)' }}>College Aruvithura</span>
+            </div>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className={`nav-hamburger${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile menu */}
+      <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
+        {links.map(l => (
+          <a
+            key={l}
+            href={`#${l.toLowerCase()}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            {l}
+          </a>
+        ))}
+        <button
+          onClick={() => {
+            setMenuOpen(false);
+            setIsNotificationOpen(true);
+          }}
+          style={{
+            margin: '8px 0',
+            padding: '10px',
+            background: 'rgba(212, 175, 55, 0.15)',
+            border: '1px solid var(--gold)',
+            color: 'var(--gold)',
+            borderRadius: '6px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            fontFamily: 'var(--mono)',
+            fontSize: '0.75rem',
+            letterSpacing: '1px'
+          }}
+        >
+          <span>🔔</span>
+          <span>View Notifications</span>
+        </button>
+        <button
+          className="nav-register"
+          onClick={() => {
+            setMenuOpen(false);
+            if (onTriggerNotice) onTriggerNotice();
+          }}
+        >
+          Register
+        </button>
+      </div>
+    </>
+  );
+}

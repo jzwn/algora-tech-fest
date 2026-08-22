@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "in_app_messages": {
+      "defaultValue": {
+        "value": "[\n  {\n    \"id\": \"promo_v1\",\n    \"enabled\": true,\n    \"delaySeconds\": 3,\n    \"title\": \"Welcome to Algora 2026! 🎉\",\n    \"body\": \"Registrations are live! Explore the schedule and register for events now.\",\n    \"btnText\": \"Register Now\",\n    \"btnLink\": \"#register\"\n  },\n  {\n    \"id\": \"workshop_banner\",\n    \"enabled\": true,\n    \"delaySeconds\": 2,\n    \"title\": \"⚡ Hands-on AI Workshop\",\n    \"body\": \"Join our flagship AI & Machine Learning workshop. Limited seats available!\",\n    \"btnText\": \"View Events\",\n    \"btnLink\": \"#events\"\n  },\n  {\n    \"id\": \"hackathon_alert\",\n    \"enabled\": false,\n    \"delaySeconds\": 0,\n    \"title\": \"🚀 Hackathon Registration\",\n    \"body\": \"Form your team and register for the 24-hour Algora Hackathon.\",\n    \"btnText\": \"Register Team\",\n    \"btnLink\": \"#register\"\n  }\n]"
+      },
+      "valueType": "JSON",
+      "description": "Single JSON array containing all in-app messaging campaigns with configurable delaySeconds."
+    }
+  }
+}
