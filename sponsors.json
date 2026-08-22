@@ -1,0 +1,26 @@
+[
+  {
+    "id": "github",
+    "name": "GitHub",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/github.svg",
+    "website": "https://github.com",
+    "tier": "Title Sponsor",
+    "priority": 1.1
+  },
+  {
+    "id": "google",
+    "name": "Google Cloud",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/google.svg",
+    "website": "https://cloud.google.com",
+    "tier": "Title Sponsor",
+    "priority": 1.2
+  },
+  {
+    "id": "partner-3",
+    "name": "Tech Partner",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/github.svg",
+    "website": "https://example.com",
+    "tier": "Gold Sponsor",
+    "priority": 2.1
+  }
+]
