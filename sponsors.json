@@ -1,25 +1,25 @@
 [
   {
-    "id": "github",
-    "name": "GitHub",
-    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/github.svg",
-    "website": "https://github.com",
-    "tier": "Title Sponsor",
+    "id": "nice",
+    "name": "Nice",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/nice_logo.png",
+    "website": "https://www.nicefoods.in/",
+    "tier": "",
     "priority": 1.1
   },
   {
-    "id": "google",
-    "name": "Google Cloud",
-    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/google.svg",
-    "website": "https://cloud.google.com",
+    "id": "ponthanal",
+    "name": "Ponthanal Silk House",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/ponthanal_logo.jpeg",
+    "website": "https://www.instagram.com/ponthanal_silkhouse/",
     "tier": "Title Sponsor",
     "priority": 1.2
   },
   {
-    "id": "partner-3",
-    "name": "Tech Partner",
-    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/github.svg",
-    "website": "https://example.com",
+    "id": "denmark",
+    "name": "Denmark Mens Outlet",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/denmark_logo.png",
+    "website": "https://www.instagram.com/denmark.mensoutlet/?hl=en",
     "tier": "Gold Sponsor",
     "priority": 2.1
   }
