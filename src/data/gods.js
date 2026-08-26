@@ -210,7 +210,7 @@ export const GODS_DATA = [
     time: "09:30 AM – 03:30 PM",
     rules: [
       "Spot theme announced at 09:30 AM on event day.",
-      "All photographs/raw video footage must be shot on campus on 05 SEP 2026.",
+      "All photographs/raw video footage must be shot on campus on 19 SEP 2026.",
       "Plagiarism or pre-created assets result in immediate zero score."
     ],
     coordX: 88,

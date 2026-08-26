@@ -23,7 +23,7 @@ export default function Contact() {
     <section className="contact" id="contact">
       <div className="section-header">
         <span className="section-label">Get In Touch</span>
-        <span className="section-num">08</span>
+        <span className="section-num">07</span>
       </div>
 
       <div className="contact-grid">

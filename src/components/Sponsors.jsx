@@ -106,7 +106,7 @@ export default function Sponsors() {
     <section className="sponsors" id="sponsors">
       <div className="section-header">
         <span className="section-label">Our Partners</span>
-        <span className="section-num">06</span>
+        <span className="section-num">05</span>
       </div>
 
       <h2 className="sponsors-heading">SPONSORS</h2>

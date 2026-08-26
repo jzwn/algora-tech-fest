@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Events from './components/Events';
 import Schedule from './components/Schedule';
-import Speakers from './components/Speakers';
 import Gallery from './components/Gallery';
 import Sponsors from './components/Sponsors';
 import Register from './components/Register';
@@ -29,12 +28,11 @@ export default function App() {
   return (
     <>
       <Navbar onTriggerNotice={handleTriggerNotice} />
-      <main>
+      <main className="main-content">
         <Hero onTriggerNotice={handleTriggerNotice} />
         <About />
         <Events onOpenRegister={handleTriggerNotice} />
         <Schedule />
-        <Speakers />
         <Gallery />
         <Sponsors />
         <Register onTriggerNotice={handleTriggerNotice} />

@@ -1,17 +1,20 @@
 import { useInView, useCountUp } from '../hooks/useInView';
 
 const stats = [
-  { num: '07', label: 'Total Events', isNum: true },
+  { num: '51K', prefix: '₹', label: 'Grand Prize Pool', isNum: false, isPrize: true },
+  { num: '07', label: 'Divine Trials', isNum: true },
   { num: '03', label: 'Categories', isNum: true },
-  { num: '01', label: 'Edition', isNum: true },
-  { num: '∞', label: 'Possibilities', isNum: false },
+  { num: '01', label: 'Inaugural Edition', isNum: true },
 ];
 
-function StatItem({ num, label, isNum, trigger, delay }) {
+function StatItem({ num, prefix, label, isNum, isPrize, trigger, delay }) {
   const count = useCountUp(isNum ? num : 0, 1400, trigger);
   return (
-    <div className="stat-item reveal-up" style={{ transitionDelay: delay }}>
-      <div className="stat-num">{isNum ? count : num}</div>
+    <div className={`stat-item reveal-up ${isPrize ? 'stat-prize-item' : ''}`} style={{ transitionDelay: delay }}>
+      <div className="stat-num">
+        {prefix && <span className="stat-prefix">{prefix}</span>}
+        {isNum ? count : num}
+      </div>
       <div className="stat-label">{label}</div>
     </div>
   );
@@ -44,8 +47,9 @@ export default function About() {
           </p>
 
           <p className={`about-para reveal-up ${visible ? 'in' : ''}`} style={{ transitionDelay: '0.2s' }}>
+            Featuring 7 supreme trials consecrated under Greek deities with a cumulative <strong>₹51,000 Grand Prize Pool</strong>,
             ALGORA provides a vibrant platform where students showcase technical expertise, creative talents,
-            and problem-solving abilities through engaging competitions and immersive experiences.
+            and problem-solving abilities.
           </p>
 
           <p className={`about-para reveal-up ${visible ? 'in' : ''}`} style={{ transitionDelay: '0.3s', borderBottom: '1px solid var(--border)', paddingBottom: '20px' }}>
@@ -60,8 +64,10 @@ export default function About() {
             <StatItem
               key={i}
               num={s.num}
+              prefix={s.prefix}
               label={s.label}
               isNum={s.isNum}
+              isPrize={s.isPrize}
               trigger={statsVisible}
               delay={`${i * 0.12}s`}
             />

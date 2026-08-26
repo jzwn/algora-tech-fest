@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { initRemoteConfigPromise, getValue, getAll } from '../firebase';
+import { initRemoteConfigPromise, getValue } from '../firebase';
 
 export function useRemoteConfig() {
   const [campaigns, setCampaigns] = useState([]);
@@ -12,8 +12,16 @@ export function useRemoteConfig() {
       if (!isMounted) return;
       if (remoteConfig) {
         try {
-          const rawVal = getValue(remoteConfig, 'in_app_messages');
-          const jsonStr = rawVal.asString();
+          // Attempt reading 'in_app_messages' first
+          const rawInApp = getValue(remoteConfig, 'in_app_messages');
+          let jsonStr = rawInApp.asString();
+
+          // Fallback to checking 'notifications' parameter if in_app_messages is empty
+          if (!jsonStr || jsonStr === '[]' || jsonStr === '') {
+            const rawNotif = getValue(remoteConfig, 'notifications');
+            const notifStr = rawNotif.asString();
+            if (notifStr) jsonStr = notifStr;
+          }
 
           if (jsonStr) {
             const parsedArray = JSON.parse(jsonStr);
@@ -26,7 +34,7 @@ export function useRemoteConfig() {
             setCampaigns([]);
           }
         } catch (err) {
-          console.warn('[useRemoteConfig] Could not parse in_app_messages JSON:', err);
+          console.warn('[useRemoteConfig] Could not parse Remote Config JSON:', err);
           setCampaigns([]);
         }
       } else {

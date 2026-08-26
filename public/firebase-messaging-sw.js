@@ -30,11 +30,14 @@ try {
     messaging.onBackgroundMessage((payload) => {
       console.log('[firebase-messaging-sw.js] Received background message:', payload);
       
-      const notificationTitle = payload.notification?.title || 'Algora 2026 Notification';
+      const notificationTitle = payload.notification?.title || payload.data?.title || 'Algora 2026 Notification';
       const notificationOptions = {
-        body: payload.notification?.body || 'You have a new update from Algora 2026.',
-        icon: payload.notification?.icon || '/favicon.ico',
-        data: payload.data || {},
+        body: payload.notification?.body || payload.data?.body || 'You have a new update from Algora 2026.',
+        icon: payload.notification?.icon || '/algora_logo.png',
+        data: {
+          ...payload.data,
+          link: payload.data?.link || payload.data?.url || payload.data?.btnLink || payload.fcmOptions?.link || '/'
+        },
       };
 
       self.registration.showNotification(notificationTitle, notificationOptions);
@@ -43,3 +46,23 @@ try {
 } catch (err) {
   console.warn('[firebase-messaging-sw.js] Messaging in service worker error:', err);
 }
+
+// Handle notification click to navigate to target URL or focus tab
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const urlToOpen = event.notification.data?.link || '/';
+
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((windowClients) => {
+      for (const client of windowClients) {
+        if (client.url === urlToOpen && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      if (clients.openWindow) {
+        return clients.openWindow(urlToOpen);
+      }
+    })
+  );
+});
+

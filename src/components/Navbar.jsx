@@ -1,12 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useMessaging } from '../hooks/useMessaging';
+import { useRemoteConfig } from '../hooks/useRemoteConfig';
 import NotificationDropdown from './NotificationDropdown';
 
 export default function Navbar({ onTriggerNotice }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
-  const { permissionStatus, requestPermission } = useMessaging();
+  const { permissionStatus, requestPermission, pushNotifications } = useMessaging();
+  const { campaigns } = useRemoteConfig();
+
+  const activeCampaigns = (campaigns || []).filter(c => c && c.enabled !== false && c.enabled !== 'false');
+  const totalNotifs = (pushNotifications?.length || 0) + activeCampaigns.length;
+  const hasNotifications = totalNotifs > 0;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -52,7 +58,7 @@ export default function Navbar({ onTriggerNotice }) {
                 aria-expanded={isNotificationOpen}
               >
                 <span className="nav-notif-bell-icon">🔔</span>
-                <span className="nav-notif-badge-dot" />
+                {hasNotifications && <span className="nav-notif-badge-dot" />}
               </button>
 
               {/* Anchored Liquid Glass Notification List Dropdown */}

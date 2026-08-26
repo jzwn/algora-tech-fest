@@ -4,7 +4,7 @@ const steps = [
   { num: '01', title: 'Choose Your Trial', body: 'Browse the 7 divine trials across technical and creative categories. Open the details popup to review full rules.', icon: '⚡' },
   { num: '02', title: 'Assemble Your Crew', body: 'Some events allow teams — gather your warriors and register together. Strength in numbers.', icon: '🛡️' },
   { num: '03', title: 'Register Online', body: 'Click any event\'s registration link to proceed to the official external portal.', icon: '📜' },
-  { num: '04', title: 'Show Up & Conquer', body: 'Arrive on September 5, 2026, at St. George\'s College, Aruvithura. Let the best minds ascend!', icon: '🏆' },
+  { num: '04', title: 'Show Up & Conquer', body: 'Arrive on September 19, 2026, at St. George\'s College, Aruvithura. Let the best minds ascend!', icon: '🏆' },
 ];
 
 export default function Register({ onTriggerNotice }) {
@@ -18,7 +18,7 @@ export default function Register({ onTriggerNotice }) {
 
       <div className="section-header">
         <span className="section-label">Participate</span>
-        <span className="section-num">07</span>
+        <span className="section-num">06</span>
       </div>
 
       <div className="register-grid" ref={ref}>
@@ -71,7 +71,7 @@ export default function Register({ onTriggerNotice }) {
             <div className="register-panel-date" style={{ marginTop: '24px' }}>
               <div className="register-panel-label" style={{ marginBottom: '4px' }}>📅 Date of the Trials</div>
               <div style={{ fontFamily: 'var(--cinzel)', fontSize: '1.1rem', color: 'var(--white)', textTransform: 'uppercase', textShadow: '0 0 10px var(--purple-glow)' }}>
-                September 5, 2026
+                September 19, 2026
               </div>
               <div style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', color: 'var(--gray)', marginTop: '4px', letterSpacing: '1px' }}>
                 Saturday · St. George's College · Aruvithura, Kerala

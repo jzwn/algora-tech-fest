@@ -62,12 +62,12 @@ export const SCHEDULE_DATA = [
   {
     id: "sch-7",
     time: "02:00 PM",
-    title: "ARES GOLAZO eFootball Tournament & QR Treasure Hunt",
+    title: "ARES GOLAZO eFootball & Hera Orion Treasure Hunt",
     godId: "ares",
-    godName: "Ares / Athena",
+    godName: "Ares / Hera",
     accent: "#DC2626",
     venue: "Ares Gaming Arena & Campus Trails",
-    description: "1v1 eFootball knockout matches; Athena's Quest teams race campus QR clue trail."
+    description: "1v1 eFootball knockout matches; Hera - Orion 5-round tech treasure hunt begins across campus checkpoints."
   },
   {
     id: "sch-8",

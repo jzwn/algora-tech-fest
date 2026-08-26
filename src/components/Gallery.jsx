@@ -15,7 +15,7 @@ const galleryItems = [
   { img: aresImg, label: 'ARES GOLAZO', sub: 'eFootball Arena · Ares', tall: false, god: 'Ares', godColor: '#DC2626' },
   { img: artemisImg, label: 'Artemis\' Hunt', sub: 'Code Debugging · Artemis', tall: true, god: 'Artemis', godColor: '#84CC16' },
   { img: zeusImg, label: 'Aivora', sub: 'AI App Development · Zeus', tall: false, god: 'Zeus', godColor: '#9333EA' },
-  { img: athenaImg, label: 'Athena\'s Quest', sub: 'Treasure Hunt · Athena', tall: false, god: 'Athena', godColor: '#10B981' },
+  { img: athenaImg, label: 'Hera - Orion', sub: 'Tech Treasure Hunt · Hera', tall: false, god: 'Hera', godColor: '#10B981' },
 ];
 
 export default function Gallery() {
@@ -26,7 +26,7 @@ export default function Gallery() {
     <section className="gallery" id="gallery">
       <div className="section-header">
         <span className="section-label">Moments &amp; Memories</span>
-        <span className="section-num">05</span>
+        <span className="section-num">04</span>
       </div>
 
       <h2 className={`gallery-heading reveal-up ${visible ? 'in' : ''}`} ref={ref}>GALLERY</h2>

@@ -23,10 +23,10 @@ export default function Schedule() {
       <div className="schedule-grid" ref={ref}>
         <div>
           <h2 className={`schedule-date-heading reveal-up ${visible ? 'in' : ''}`}>
-            05<br />SEP<br />2026
+            19<br />SEP<br />2026
           </h2>
           <p className={`schedule-desc reveal-up ${visible ? 'in' : ''}`} style={{ transitionDelay: '0.1s' }}>
-            Mark your calendar! ALGORA 2026 takes place on September 5th, 2026.
+            Mark your calendar! ALGORA 2026 takes place on September 19th, 2026.
             A day packed with competitions, creativity, and collaboration at
             St. George's College, Aruvithura.
           </p>

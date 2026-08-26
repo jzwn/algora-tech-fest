@@ -5,8 +5,26 @@ export default function PushNotificationToast() {
 
   if (!foregroundNotification) return null;
 
-  const title = foregroundNotification.notification?.title || 'Notification';
-  const body = foregroundNotification.notification?.body || '';
+  const title = foregroundNotification.notification?.title || foregroundNotification.data?.title || 'Notification';
+  const body = foregroundNotification.notification?.body || foregroundNotification.data?.body || '';
+  const link = foregroundNotification.data?.link || foregroundNotification.data?.url || foregroundNotification.data?.btnLink || foregroundNotification.fcmOptions?.link;
+  const btnText = foregroundNotification.data?.btnText || 'View Details';
+
+  const handleAction = () => {
+    clearNotification();
+    if (link) {
+      if (link.startsWith('#')) {
+        const el = document.querySelector(link);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else if (link.startsWith('http://') || link.startsWith('https://')) {
+        window.open(link, '_blank', 'noopener,noreferrer');
+      } else {
+        window.location.href = link;
+      }
+    }
+  };
 
   return (
     <div
@@ -49,9 +67,32 @@ export default function PushNotificationToast() {
         </button>
       </div>
       {body && (
-        <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(230, 230, 250, 0.9)', fontFamily: 'var(--barlow)', lineHeight: 1.4 }}>
+        <p style={{ margin: '0 0 10px', fontSize: '0.85rem', color: 'rgba(230, 230, 250, 0.9)', fontFamily: 'var(--barlow)', lineHeight: 1.4 }}>
           {body}
         </p>
+      )}
+      {link && (
+        <button
+          onClick={handleAction}
+          style={{
+            background: 'linear-gradient(135deg, var(--gold), #d97706)',
+            border: 'none',
+            color: '#0d0d1f',
+            fontWeight: 700,
+            fontSize: '0.75rem',
+            padding: '6px 14px',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontFamily: 'var(--mono)',
+            letterSpacing: '0.5px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '4px',
+            transition: 'opacity 0.2s',
+          }}
+        >
+          {btnText} →
+        </button>
       )}
     </div>
   );
