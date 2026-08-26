@@ -174,6 +174,9 @@ export default function Events({ onOpenRegister }) {
             className={`event-modal-container ${modalView === 'register' ? 'is-register-view' : ''}`}
             onClick={e => e.stopPropagation()}
           >
+            {/* Mobile Sheet Pull Handle */}
+            <div className="modal-mobile-sheet-handle" onClick={() => setActiveModalEvent(null)} title="Close" />
+
             {modalView === 'rules' ? (
               <>
                 {/* Rules Modal Header */}
@@ -182,6 +185,7 @@ export default function Events({ onOpenRegister }) {
                     className="event-modal-close"
                     onClick={() => setActiveModalEvent(null)}
                     aria-label="Close modal"
+                    title="Close"
                   >
                     ✕
                   </button>
