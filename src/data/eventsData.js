@@ -4,7 +4,7 @@ import apolloImg from '../assets/god-apollo.png';
 import aresImg from '../assets/god-ares.png';
 import poseidonImg from '../assets/god-poseidon.png';
 import artemisImg from '../assets/god-artemis.png';
-import athenaImg from '../assets/god-athena.png';
+import heraImg from '../assets/god-hera.png';
 
 export const GRAND_TOTAL_PRIZE_POOL = '₹51,000';
 
@@ -27,7 +27,7 @@ export const EVENTS_DATA = [
     objective: 'To encourage participants to design practical AI applications, enhance problem-solving and teamwork skills, and showcase innovative solutions using Artificial Intelligence.',
     embedUrl: 'https://makemypass.com/event/ai-app-development-aivora/?type=embed',
     registrationUrl: 'https://makemypass.com/event/ai-app-development-aivora/',
-    registrationFee: '₹200 per team (Food is not included)',
+    registrationFee: '₹200 per team',
     prizePool: '₹12,000',
     prizePoolNum: 12000,
     duration: '3 Hours',
@@ -49,7 +49,7 @@ export const EVENTS_DATA = [
     rules: [
       'Teams must consist of 2–4 members.',
       'Participants must carry a valid college ID card for verification.',
-      'The registration fee is ₹200 per team. (Food is not included.)',
+      'The registration fee is ₹200 per team.',
       'The problem statement will be announced at the beginning of the competition.',
       'Participants may use any programming language, framework, database, and development tools of their choice.',
       'The use of AI-assisted development tools (e.g., ChatGPT, GitHub Copilot, Gemini, Cursor, Claude, etc.) is permitted.',
@@ -83,7 +83,7 @@ export const EVENTS_DATA = [
     godTitle: 'Queen of Olympus & Supreme Hunt Mistress',
     godColor: '#10B981',
     godGlow: 'rgba(16,185,129,0.55)',
-    bgImage: athenaImg,
+    bgImage: heraImg,
     objective: 'Promote logical thinking, teamwork, communication, technical problem-solving, and decoding abilities through an engaging technology-based treasure hunt.',
     registrationFee: '₹200 per team',
     prizePool: '₹10,000',

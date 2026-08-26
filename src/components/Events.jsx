@@ -52,16 +52,23 @@ export default function Events({ onOpenRegister }) {
 
       {/* Grand Prize Pool Attraction Banner */}
       <div className={`events-grand-prize-banner reveal-up ${visible ? 'in' : ''}`} style={{ transitionDelay: '0.15s' }}>
+        <div className="grand-prize-border-glow" />
         <div className="grand-prize-content">
           <div className="grand-prize-icon-wrap">
             <span className="grand-prize-trophy">🏆</span>
           </div>
           <div className="grand-prize-text-col">
-            <div className="grand-prize-pill">MEGA PRIZE POOL</div>
-            <div className="grand-prize-amount">{GRAND_TOTAL_PRIZE_POOL}</div>
-            <div className="grand-prize-desc">
-              Total Cash Prizes &amp; Honours Across All 7 Divine Trials · Flagship AI App Dev (₹12,000) &amp; Treasure Hunt (₹10,000)
+            <div className="grand-prize-pill-row">
+              <span className="grand-prize-pill">✦ OLYMPIAN MEGA PRIZE POOL ✦</span>
+              <span className="grand-prize-stat-pill">7 DIVINE TRIALS</span>
             </div>
+            <div className="grand-prize-amount-row">
+              <span className="grand-prize-amount">{GRAND_TOTAL_PRIZE_POOL}</span>
+              <span className="grand-prize-amount-label">CASH &amp; MERIT HONOURS</span>
+            </div>
+            <p className="grand-prize-desc">
+              Guaranteed Cash Prizes &amp; Trophies Across All 7 Trials · Flagship AI App Dev (<strong>₹12,000</strong>) &amp; Tech Treasure Hunt (<strong>₹10,000</strong>)
+            </p>
           </div>
         </div>
       </div>
@@ -116,7 +123,7 @@ export default function Events({ onOpenRegister }) {
               <h3 className="ev-card-title">{ev.title}</h3>
 
               {ev.subtitle && (
-                <div style={{ fontFamily: 'var(--mono)', fontSize: '0.7rem', color: 'var(--gold)', marginBottom: '8px' }}>
+                <div className="ev-card-subtitle">
                   {ev.subtitle}
                 </div>
               )}

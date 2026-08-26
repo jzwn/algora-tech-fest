@@ -1358,13 +1358,154 @@ img {
 /* Events Greek lore subtitle */
 .events-lore {
   font-family: var(--cinzel);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 2px;
   color: var(--gold);
   text-shadow: 0 0 8px var(--gold-glow);
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 0.85;
+}
+
+/* ─── EVENTS GRAND MEGA PRIZE POOL MARQUEE BANNER ─── */
+.events-grand-prize-banner {
+  position: relative;
+  margin: 0 0 40px 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(28, 18, 62, 0.85) 0%, rgba(12, 10, 28, 0.95) 50%, rgba(32, 20, 56, 0.85) 100%);
+  border: 1.5px solid rgba(245, 200, 66, 0.4);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65), 0 0 32px rgba(147, 51, 234, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.events-grand-prize-banner:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 200, 66, 0.7);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.75), 0 0 45px rgba(245, 200, 66, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.grand-prize-border-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--purple-light) 25%, var(--gold) 50%, var(--purple-light) 75%, transparent 100%);
+  filter: drop-shadow(0 0 8px var(--gold-glow));
+}
+
+.grand-prize-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.grand-prize-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 200, 66, 0.25) 0%, rgba(147, 51, 234, 0.15) 70%, transparent 100%);
+  border: 1.5px solid rgba(245, 200, 66, 0.5);
+  box-shadow: 0 0 20px rgba(245, 200, 66, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: pulseGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); box-shadow: 0 0 16px rgba(245, 200, 66, 0.25); }
+  100% { transform: scale(1.06); box-shadow: 0 0 28px rgba(245, 200, 66, 0.55); }
+}
+
+.grand-prize-trophy {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 10px var(--gold-glow));
+}
+
+.grand-prize-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.grand-prize-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.grand-prize-pill {
+  font-family: var(--cinzel);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(245, 200, 66, 0.12);
+  border: 1px solid rgba(245, 200, 66, 0.35);
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-shadow: 0 0 8px var(--gold-glow);
+}
+
+.grand-prize-stat-pill {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--purple-light);
+  background: rgba(147, 51, 234, 0.15);
+  border: 1px solid rgba(147, 51, 234, 0.35);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.grand-prize-amount-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.grand-prize-amount {
+  font-family: var(--cinzel);
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--gold);
+  text-shadow: 0 0 24px var(--gold-glow), 0 2px 4px rgba(0,0,0,0.8);
+  line-height: 1;
+}
+
+.grand-prize-amount-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(230, 230, 250, 0.75);
+  font-weight: 600;
+}
+
+.grand-prize-desc {
+  font-family: var(--barlow);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(220, 220, 240, 0.85);
+  margin: 0;
+}
+
+.grand-prize-desc strong {
+  color: var(--gold);
+  font-weight: 700;
 }
 
 .ev-tabs {
@@ -1398,8 +1539,6 @@ img {
   border-bottom-color: var(--purple-light);
   text-shadow: 0 0 8px var(--purple-glow);
 }
-
-/* remove duplicate hover */
 
 /* ── Event grid: epic god card layout ── */
 .ev-grid {
@@ -1507,7 +1646,6 @@ img {
   border: 1px solid var(--border);
   color: var(--gray);
   border-radius: 2px;
-  margin-top: 6px;
   display: inline-block;
 }
 
@@ -1530,18 +1668,27 @@ img {
 
 .ev-card-title {
   font-family: var(--cinzel);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   text-transform: uppercase;
   color: var(--white);
-  margin-bottom: 8px;
-  line-height: 1.2;
+  margin-bottom: 4px;
+  line-height: 1.25;
   text-shadow: 0 0 10px rgba(255,255,255,0.3);
-  flex: 1;
+  flex: none;
 }
 
 .ev-card.featured .ev-card-title {
   color: var(--purple-light);
   text-shadow: 0 0 16px var(--purple-glow);
+}
+
+.ev-card-subtitle {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+  line-height: 1.35;
+  letter-spacing: 0.5px;
 }
 
 .ev-god-name-large {
@@ -1555,12 +1702,21 @@ img {
   opacity: 0.85;
 }
 
+.ev-card-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
 .ev-card-desc {
   font-family: var(--barlow);
   font-size: 0.82rem;
   color: rgba(200,195,230,0.75);
   line-height: 1.55;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  flex: 1;
 }
 
 .ev-card-btn {
@@ -3897,94 +4053,233 @@ footer {
 
 /* ─── RESPONSIVE MEDIA QUERIES ───────────────────────── */
 @media (max-width: 768px) {
+  /* Grand Prize Banner Mobile */
+  .events-grand-prize-banner {
+    margin-bottom: 28px;
+    border-radius: 10px;
+  }
+  .grand-prize-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 14px;
+  }
+  .grand-prize-icon-wrap {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto;
+  }
+  .grand-prize-trophy {
+    font-size: 1.9rem;
+  }
+  .grand-prize-pill-row {
+    justify-content: center;
+  }
+  .grand-prize-amount-row {
+    justify-content: center;
+    gap: 8px;
+  }
+  .grand-prize-amount {
+    font-size: 2.1rem;
+  }
+  .grand-prize-desc {
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  /* Modal Container Mobile */
+  .event-modal-overlay {
+    padding: 8px;
+    align-items: center;
+  }
   .event-modal-container {
-    max-height: 94vh;
+    max-height: 93vh;
     border-radius: 12px;
+    width: 100%;
   }
   .event-modal-header {
-    padding: 20px 20px 16px;
-    padding-right: 64px;
+    padding: 18px 16px 14px;
+    padding-right: 56px;
   }
   .event-modal-close {
-    top: 16px;
-    right: 16px;
-    width: 34px;
-    height: 34px;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
     font-size: 1rem;
+    z-index: 50;
   }
+  .modal-event-title {
+    font-size: 1.15rem;
+    gap: 8px;
+  }
+  .modal-event-subtitle {
+    font-size: 0.72rem;
+    margin-top: 3px;
+  }
+  .modal-view-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    margin-top: 12px;
+  }
+  .modal-view-tab-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.72rem;
+    padding: 7px 12px;
+  }
+
   .event-modal-body {
-    padding: 20px 20px;
-    gap: 20px;
+    padding: 16px 16px;
+    gap: 16px;
   }
   .modal-podium-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .modal-podium-card {
+    padding: 10px 12px;
   }
   .modal-podium-card.tier-participation {
     grid-column: auto;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
   }
   .modal-specs-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
-  .modal-resources-grid {
+  .spec-card {
+    padding: 8px 10px;
+  }
+  .spec-label {
+    font-size: 0.58rem;
+  }
+  .spec-value {
+    font-size: 0.82rem;
+  }
+  .modal-rounds-timeline {
+    gap: 8px;
+  }
+  .modal-round-step {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+  .round-step-title {
+    font-size: 0.88rem;
+  }
+  .round-step-desc {
+    font-size: 0.82rem;
+  }
+  .modal-rules-list li {
+    padding: 8px 10px;
+    font-size: 0.84rem;
+    gap: 8px;
+  }
+  .judging-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .event-modal-footer {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .event-modal-footer > div {
+    width: 100%;
+    flex-direction: column;
+  }
+  .modal-register-btn, .modal-back-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 18px;
+    font-size: 0.78rem;
+  }
+
+  /* MakeMyPass Registration View Mobile */
+  .event-modal-container.is-register-view {
+    max-width: 100%;
+    width: 100%;
+    height: 96vh;
+    max-height: 96vh;
+    border-radius: 12px;
   }
   .reg-fullscreen-header {
-    padding: 8px 12px;
+    padding: 8px 10px;
     gap: 8px;
-    min-height: 46px;
+    min-height: 48px;
+  }
+  .reg-header-left {
+    max-width: 68%;
+    gap: 6px;
+  }
+  .reg-header-title-wrap {
+    gap: 4px;
   }
   .reg-header-title {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .reg-header-badge {
     display: none;
   }
   .reg-header-ext-btn {
     padding: 5px 8px;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
+    white-space: nowrap;
   }
   .reg-header-back-btn {
-    padding: 5px 10px;
-    font-size: 0.68rem;
+    padding: 5px 8px;
+    font-size: 0.65rem;
+    white-space: nowrap;
   }
-  .event-modal-container.is-register-view {
-    max-width: 100%;
-    width: 100%;
-    height: 96vh;
-    max-height: 96vh;
+  .reg-header-close-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+  .reg-iframe-fallback-bar {
+    padding: 6px 10px;
+    gap: 6px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .fallback-text {
+    font-size: 0.72rem;
+  }
+  .fallback-btn {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    justify-content: center;
+    text-align: center;
   }
   .event-modal-body.is-register-body {
     padding: 0 !important;
+    margin: 0 !important;
     overflow: hidden !important;
+    height: calc(100% - 48px);
   }
   .modal-iframe-box.is-fullscreen-iframe {
+    width: 100%;
     height: 100%;
     min-height: 0;
   }
   .modal-iframe-box.is-fullscreen-iframe .modal-iframe-element {
+    width: 100%;
     height: 100%;
     min-height: 0;
-  }
-  .event-modal-footer {
-    padding: 16px 20px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-  .modal-register-btn {
-    width: 100%;
-    justify-content: center;
-  }
-  .grand-prize-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-  .grand-prize-icon-wrap {
-    margin: 0 auto;
+    border: none;
   }
 }
 
@@ -3993,7 +4288,7 @@ footer {
     padding: 4px;
   }
   .event-modal-container {
-    max-height: 96vh;
+    max-height: 95vh;
     border-radius: 10px;
   }
   .event-modal-container.is-register-view {
@@ -4001,70 +4296,38 @@ footer {
     max-height: 98vh;
     border-radius: 8px;
   }
-  .reg-fullscreen-header {
-    padding: 6px 10px;
-    min-height: 42px;
-  }
-  .reg-header-title-wrap {
-    gap: 4px;
-  }
-  .reg-header-title {
-    font-size: 0.78rem;
-    max-width: 140px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
   .event-modal-header {
-    padding: 14px 14px 12px;
-    padding-right: 52px;
+    padding: 14px 12px 10px;
+    padding-right: 50px;
+  }
+  .event-modal-close {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+  }
+  .modal-event-title {
+    font-size: 1.05rem;
   }
   .event-modal-body {
-    padding: 14px 14px;
-    gap: 16px;
-  }
-  .event-modal-body.is-register-body {
-    padding: 0 !important;
-  }
-  .modal-view-tabs {
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 10px;
-    padding-top: 8px;
-  }
-  .modal-view-tab-btn {
-    flex: 1 1 auto;
-    justify-content: center;
-    font-size: 0.72rem;
-    padding: 6px 8px;
-  }
-  .modal-iframe-box {
-    min-height: 480px;
-    height: 100%;
-  }
-  .modal-iframe-element {
-    min-height: 480px;
-  }
-  .modal-embed-topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding: 8px 10px;
+    padding: 12px 12px;
+    gap: 14px;
   }
   .modal-specs-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
   }
-  .modal-prize-hero-banner {
-    padding: 16px 14px;
+  .spec-card {
+    padding: 6px 8px;
   }
-  .modal-prize-hero-number {
-    font-size: 2rem;
+  .spec-label {
+    font-size: 0.55rem;
   }
-  .modal-prize-hero-sub {
-    font-size: 0.8rem;
+  .spec-value {
+    font-size: 0.78rem;
   }
-  .judging-grid {
-    grid-template-columns: 1fr;
+  .grand-prize-amount {
+    font-size: 1.85rem;
   }
 }
 

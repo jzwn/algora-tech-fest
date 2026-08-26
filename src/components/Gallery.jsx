@@ -6,7 +6,7 @@ import apolloImg from '../assets/god-apollo.png';
 import aresImg from '../assets/god-ares.png';
 import poseidonImg from '../assets/god-poseidon.png';
 import artemisImg from '../assets/god-artemis.png';
-import athenaImg from '../assets/god-athena.png';
+import heraImg from '../assets/god-hera.png';
 
 const galleryItems = [
   { img: apolloImg, label: 'CHRONOS', sub: 'Short Film Review · Apollo', tall: true, god: 'Apollo', godColor: '#F59E0B' },
@@ -15,7 +15,7 @@ const galleryItems = [
   { img: aresImg, label: 'ARES GOLAZO', sub: 'eFootball Arena · Ares', tall: false, god: 'Ares', godColor: '#DC2626' },
   { img: artemisImg, label: 'Artemis\' Hunt', sub: 'Code Debugging · Artemis', tall: true, god: 'Artemis', godColor: '#84CC16' },
   { img: zeusImg, label: 'Aivora', sub: 'AI App Development · Zeus', tall: false, god: 'Zeus', godColor: '#9333EA' },
-  { img: athenaImg, label: 'Hera - Orion', sub: 'Tech Treasure Hunt · Hera', tall: false, god: 'Hera', godColor: '#10B981' },
+  { img: heraImg, label: 'Hera - Orion', sub: 'Tech Treasure Hunt · Hera', tall: false, god: 'Hera', godColor: '#10B981' },
 ];
 
 export default function Gallery() {
