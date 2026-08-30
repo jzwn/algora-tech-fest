@@ -3860,6 +3860,112 @@ footer {
   letter-spacing: 0.3px;
 }
 
+/* Coordinator Phone & WhatsApp Action Chips */
+.coordinator-phone-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.coord-call-btn,
+.coord-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.coord-call-btn {
+  background: rgba(147, 51, 234, 0.16);
+  border: 1px solid rgba(147, 51, 234, 0.45);
+  color: #f3e8ff;
+}
+
+.coord-call-btn:hover {
+  background: rgba(147, 51, 234, 0.35);
+  border-color: rgba(168, 85, 247, 0.8);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(147, 51, 234, 0.35);
+}
+
+.coord-wa-btn {
+  background: rgba(34, 197, 94, 0.14);
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  color: #4ade80;
+}
+
+.coord-wa-btn:hover {
+  background: rgba(34, 197, 94, 0.3);
+  border-color: rgba(74, 222, 128, 0.85);
+  color: #86efac;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+}
+
+.coord-btn-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* Schedule Overall Coordinators Card */
+.schedule-coordinators-card {
+  background: linear-gradient(135deg, rgba(20, 15, 42, 0.9) 0%, rgba(10, 8, 26, 0.95) 100%);
+  border: 1px solid rgba(147, 51, 234, 0.25);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: inset 0 0 24px rgba(124, 58, 237, 0.08), 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.sched-coord-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+}
+
+.sched-coord-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.sched-coord-title {
+  font-family: var(--cinzel);
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white);
+  margin: 0;
+}
+
+.sched-coord-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Contact Coordinators Block */
+.contact-coordinators-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 /* Modal section headers */
 .modal-section-title {
   font-family: var(--cinzel);
@@ -5048,6 +5154,11 @@ footer {
   .modal-footer-actions .makemypass-btn-subtext {
     font-size: 0.52rem;
     line-height: 1.1;
+  }
+
+  .sched-coord-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   /* MakeMyPass Registration View Mobile */

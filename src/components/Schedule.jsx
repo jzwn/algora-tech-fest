@@ -208,6 +208,81 @@ export default function Schedule() {
             </div>
           )}
 
+          {/* Overall Fest Coordinators */}
+          <div className={`schedule-coordinators-card reveal-up ${timeVisible ? 'in' : ''}`} style={{ transitionDelay: '0.35s' }}>
+            <div className="sched-coord-header">
+              <span className="sched-coord-tag">⚡ Central Leadership</span>
+              <h3 className="sched-coord-title">Overall Fest Coordinators</h3>
+            </div>
+            <div className="sched-coord-grid">
+              {/* Overall Student Coordinator */}
+              <div className="coordinator-card student-coord">
+                <div className="coordinator-card-inner">
+                  <div className="coordinator-avatar-wrap">
+                    <span className="coord-avatar-icon">🎓</span>
+                  </div>
+                  <div className="coordinator-info">
+                    <span className="coordinator-role">Overall Student Coordinator</span>
+                    <div className="coordinator-name">Anjo Joyan</div>
+                    <div className="coordinator-phone-actions">
+                      <a
+                        href="tel:+919061634012"
+                        className="coord-call-btn"
+                        title="Call Anjo Joyan (+91 90616 34012)"
+                      >
+                        <span className="coord-btn-icon">📞</span>
+                        <span>+91 90616 34012</span>
+                      </a>
+                      <a
+                        href="https://wa.me/919061634012"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="coord-wa-btn"
+                        title="Chat with Anjo Joyan on WhatsApp"
+                      >
+                        <span className="coord-btn-icon">💬</span>
+                        <span>WhatsApp</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Main Faculty Coordinator */}
+              <div className="coordinator-card faculty-coord">
+                <div className="coordinator-card-inner">
+                  <div className="coordinator-avatar-wrap">
+                    <span className="coord-avatar-icon">👨‍🏫</span>
+                  </div>
+                  <div className="coordinator-info">
+                    <span className="coordinator-role">Main Faculty Coordinator</span>
+                    <div className="coordinator-name">Dr. Jestin Joy</div>
+                    <div className="coordinator-phone-actions">
+                      <a
+                        href="tel:+919446764386"
+                        className="coord-call-btn"
+                        title="Call Dr. Jestin Joy (+91 94467 64386)"
+                      >
+                        <span className="coord-btn-icon">📞</span>
+                        <span>+91 94467 64386</span>
+                      </a>
+                      <a
+                        href="https://wa.me/919446764386"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="coord-wa-btn"
+                        title="Chat with Dr. Jestin Joy on WhatsApp"
+                      >
+                        <span className="coord-btn-icon">💬</span>
+                        <span>WhatsApp</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className={`venue-card reveal-up ${timeVisible ? 'in' : ''}`} style={{ transitionDelay: '0.4s' }}>
             <div className="venue-label">⚡ Venue of the Trials</div>
             <div className="venue-name">St. George's College</div>
