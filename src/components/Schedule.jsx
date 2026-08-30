@@ -57,7 +57,7 @@ const daySchedule = [
     icon: '⚡',
     coordinator: 'Priyalakshmi G',
     phone: '+91 81290 58815',
-    desc: 'Real-world problem solving, rapid AI solution coding, and grand jury pitch.'
+    desc: 'Analyze announced real-world problem, rapid AI application coding & grand jury pitch.'
   },
   {
     time: '10:00 AM – 1:00 PM',
