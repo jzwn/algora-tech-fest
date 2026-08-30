@@ -73,81 +73,44 @@ export default function InAppMessageModal() {
 
   return (
     <div
-      className="event-modal-overlay"
+      className="inapp-modal-overlay"
       onClick={handleDismiss}
       style={{ zIndex: 10001 }}
     >
       <div
-        className="event-modal-container"
+        className="inapp-modal-container"
         onClick={(e) => e.stopPropagation()}
-        style={{
-          maxWidth: '520px',
-          textAlign: 'center',
-          padding: '36px 28px',
-          background: 'linear-gradient(135deg, rgba(20, 15, 38, 0.95), rgba(10, 8, 20, 0.98))',
-          border: '1px solid rgba(212, 175, 55, 0.4)',
-          boxShadow: '0 0 30px rgba(124, 58, 237, 0.3)',
-        }}
       >
         <button
-          className="event-modal-close"
+          className="inapp-modal-close"
           onClick={handleDismiss}
           aria-label="Close message"
         >
           ✕
         </button>
 
-        <div style={{ fontSize: '2.5rem', marginBottom: '16px', filter: 'drop-shadow(0 0 10px var(--gold-glow))' }}>
+        <div className="inapp-modal-icon">
           📢
         </div>
 
-        <h3
-          style={{
-            fontFamily: 'var(--cinzel)',
-            fontSize: '1.4rem',
-            color: 'var(--gold)',
-            textTransform: 'uppercase',
-            marginBottom: '12px',
-            letterSpacing: '1.5px',
-            textShadow: '0 0 12px var(--gold-glow)',
-          }}
-        >
+        <h3 className="inapp-modal-title">
           {title}
         </h3>
 
-        <p
-          style={{
-            fontFamily: 'var(--barlow)',
-            fontSize: '0.95rem',
-            color: 'rgba(230,230,250,0.9)',
-            lineHeight: 1.6,
-            marginBottom: '24px',
-          }}
-        >
+        <p className="inapp-modal-body">
           {body}
         </p>
 
-        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+        <div className="inapp-modal-actions">
           <button
-            className="modal-register-btn"
-            style={{ flex: 1, justifyContent: 'center' }}
+            className="inapp-modal-btn-primary"
             onClick={handleAction}
           >
             {btnText || 'Learn More'} →
           </button>
           <button
+            className="inapp-modal-btn-secondary"
             onClick={handleDismiss}
-            style={{
-              padding: '10px 18px',
-              background: 'transparent',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              color: 'rgba(255, 255, 255, 0.7)',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              fontFamily: 'var(--barlow)',
-              fontWeight: 600,
-              transition: 'all 0.2s ease',
-            }}
           >
             Dismiss
           </button>

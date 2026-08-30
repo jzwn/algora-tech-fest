@@ -1,7 +1,7 @@
 import { useInView } from '../hooks/useInView';
 
 const steps = [
-  { num: '01', title: 'Choose Your Trial', body: 'Browse the 7 divine trials across technical and creative categories. Open the details popup to review full rules.', icon: '⚡' },
+  { num: '01', title: 'Choose Your Trial', body: 'Browse the 7 divine trials and exciting spot challenges across technical, creative, and gaming categories. Open the details popup to review full rules, prizes, and coordinators.', icon: '⚡' },
   { num: '02', title: 'Assemble Your Crew', body: 'Some events allow teams — gather your warriors and register together. Strength in numbers.', icon: '🛡️' },
   { num: '03', title: 'Register Online', body: 'Click any event\'s registration link to proceed to the official external portal.', icon: '📜' },
   { num: '04', title: 'Show Up & Conquer', body: 'Arrive on September 19, 2026, at St. George\'s College, Aruvithura. Let the best minds ascend!', icon: '🏆' },
@@ -57,7 +57,7 @@ export default function Register({ onTriggerNotice }) {
             </div>
 
             <p style={{ fontFamily: 'var(--barlow)', fontSize: '0.9rem', color: 'rgba(230,230,250,0.85)', lineHeight: '1.6', marginBottom: '24px' }}>
-              Official registrations for all college, school, and general events are conducted via our centralized external portal.
+              Official registrations for all college, school, general, and spot events are conducted via our centralized external portal.
             </p>
 
             <button

@@ -6,7 +6,7 @@ import poseidonImg from '../assets/god-poseidon.png';
 import artemisImg from '../assets/god-artemis.png';
 import heraImg from '../assets/god-hera.png';
 
-export const GRAND_TOTAL_PRIZE_POOL = '₹51,000';
+export const GRAND_TOTAL_PRIZE_POOL = '₹54,000';
 
 export const EVENTS_DATA = [
   {
@@ -25,12 +25,17 @@ export const EVENTS_DATA = [
     godGlow: 'rgba(147,51,234,0.6)',
     bgImage: zeusImg,
     objective: 'To encourage participants to design practical AI applications, enhance problem-solving and teamwork skills, and showcase innovative solutions using Artificial Intelligence.',
+    studentCoordinator: 'Priyalakshmi G',
+    studentCoordinatorPhone: '+91 81290 58815',
+    facultyCoordinator: 'Dr. Soumya George',
+    date: 'September 19, 2026',
+    time: '10:00 AM – 1:00 PM',
     embedUrl: 'https://makemypass.com/event/ai-app-development-aivora/?type=embed',
     registrationUrl: 'https://makemypass.com/event/ai-app-development-aivora/',
     registrationFee: '₹200 per team',
     prizePool: '₹12,000',
     prizePoolNum: 12000,
-    duration: '3 Hours',
+    duration: '3 Hours (10:00 AM – 1:00 PM)',
     rounds: '2 Rounds / Sections',
     roundDetails: [
       { round: 'Section 1', name: 'Problem Statement & System Architecture', desc: 'Analyze the announced real-world problem statement and formulate an innovative AI solution architecture.' },
@@ -41,9 +46,9 @@ export const EVENTS_DATA = [
     eligibility: 'Open to UG and PG students from any recognized college or university. Each participant/team must complete registration before the deadline. Valid college ID card is mandatory.',
     resourcesRequired: 'Participants must bring their own laptops, chargers, and any required accessories.',
     prizes: [
-      { rank: '1st', position: '🥇 1st Prize', amount: '₹6,000', reward: '₹6,000 Cash Prize + Champion Trophy + Certificate of Merit', tier: 'gold' },
-      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹4,000', reward: '₹4,000 Cash Prize + Runner-up Trophy + Certificate of Merit', tier: 'silver' },
-      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹2,000', reward: '₹2,000 Cash Prize + Trophy + Certificate of Merit', tier: 'bronze' },
+      { rank: '1st', position: '🥇 1st Prize', amount: '₹6,000', reward: '₹6,000 Cash Award + Certificate of Merit', tier: 'gold' },
+      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹4,000', reward: '₹4,000 Cash Award + Certificate of Merit', tier: 'silver' },
+      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹2,000', reward: '₹2,000 Cash Award + Certificate of Merit', tier: 'bronze' },
       { rank: 'all', position: '🎖️ Participation', amount: 'Certificate', reward: 'Official Certificate of Participation for all team members', tier: 'participation' }
     ],
     rules: [
@@ -85,10 +90,17 @@ export const EVENTS_DATA = [
     godGlow: 'rgba(16,185,129,0.55)',
     bgImage: heraImg,
     objective: 'Promote logical thinking, teamwork, communication, technical problem-solving, and decoding abilities through an engaging technology-based treasure hunt.',
+    studentCoordinator: 'Aliya Mujeeb',
+    studentCoordinatorPhone: '+91 62382 76832',
+    facultyCoordinator: 'Dr. Soumya George',
+    date: 'September 19, 2026',
+    time: '10:00 AM – 12:00 PM',
+    embedUrl: 'https://makemypass.com/event/treasure-hunt-hera-orion/?type=embed',
+    registrationUrl: 'https://makemypass.com/event/treasure-hunt-hera-orion/',
     registrationFee: '₹200 per team',
     prizePool: '₹10,000',
     prizePoolNum: 10000,
-    duration: 'Approximately 60–75 Minutes',
+    duration: '2 Hours (10:00 AM – 12:00 PM)',
     rounds: '5 Sequential Rounds (Race-Based Elimination-Free)',
     roundDetails: [
       { round: 'Round 1', name: 'Riddle Challenge', venue: 'Starting Point', desc: 'Participants solve an initial riddle to identify the first destination (Open Gym).' },
@@ -102,9 +114,9 @@ export const EVENTS_DATA = [
     eligibility: 'Open to all students participating in the Tech Fest. Valid ID card is mandatory.',
     resourcesRequired: 'Smartphone with active camera/QR scanner and mobile data connection (permitted strictly during Round 2).',
     prizes: [
-      { rank: '1st', position: '🥇 1st Prize', amount: '₹5,000', reward: '₹5,000 Cash Prize + Champion Trophy + Certificate of Merit', tier: 'gold' },
-      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹3,000', reward: '₹3,000 Cash Prize + Runner-up Trophy + Certificate of Merit', tier: 'silver' },
-      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹2,000', reward: '₹2,000 Cash Prize + Trophy + Certificate of Merit', tier: 'bronze' },
+      { rank: '1st', position: '🥇 1st Prize', amount: '₹5,000', reward: '₹5,000 Cash Award + Certificate of Merit', tier: 'gold' },
+      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹3,000', reward: '₹3,000 Cash Award + Certificate of Merit', tier: 'silver' },
+      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹2,000', reward: '₹2,000 Cash Award + Certificate of Merit', tier: 'bronze' },
       { rank: 'all', position: '🎖️ Participation', amount: 'Certificate', reward: 'Official Certificate of Participation for all team members', tier: 'participation' }
     ],
     rules: [
@@ -141,10 +153,17 @@ export const EVENTS_DATA = [
     godGlow: 'rgba(132,204,22,0.55)',
     bgImage: artemisImg,
     objective: 'Evaluate syntax auditing, code inspection, and logic debugging skills under time constraints. Test practical problem-solving proficiency in diagnosing faulty C and Python code snippets.',
+    studentCoordinator: 'Alan Vincent',
+    studentCoordinatorPhone: '+91 85903 32791',
+    facultyCoordinator: 'Mr. Linu T James',
+    date: 'September 19, 2026',
+    time: '10:00 AM – 11:15 AM',
+    embedUrl: 'https://makemypass.com/event/code-debugging-competition-artemis-hunt/?type=embed',
+    registrationUrl: 'https://makemypass.com/event/code-debugging-competition-artemis-hunt/',
     registrationFee: '₹100 per participant',
     prizePool: '₹6,000',
     prizePoolNum: 6000,
-    duration: '45 Minutes (Server-synced continuous countdown timer)',
+    duration: '1 Hour 15 Mins (10:00 AM – 11:15 AM)',
     rounds: '1 Single Round (2 Difficulty Sections)',
     roundDetails: [
       { round: 'Section A', name: 'Silver Arrows (Minor Bugs)', marks: '50 Points (10 × 5 pts)', desc: '10 buggy code snippets in C & Python under continuous countdown timer.' },
@@ -155,9 +174,9 @@ export const EVENTS_DATA = [
     eligibility: 'UG and PG Students (College Students) with valid College ID.',
     resourcesRequired: 'Individual workstation assigned in BCA Computer Lab.',
     prizes: [
-      { rank: '1st', position: '🥇 1st Prize', amount: '₹3,000', reward: '₹3,000 Cash Prize + Winner Trophy + Certificate of Merit', tier: 'gold' },
-      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹2,000', reward: '₹2,000 Cash Prize + Runner-up Trophy + Certificate of Merit', tier: 'silver' },
-      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,000', reward: '₹1,000 Cash Prize + Trophy + Certificate of Merit', tier: 'bronze' },
+      { rank: '1st', position: '🥇 1st Prize', amount: '₹3,000', reward: '₹3,000 Cash Award + Certificate of Merit', tier: 'gold' },
+      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹2,000', reward: '₹2,000 Cash Award + Certificate of Merit', tier: 'silver' },
+      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,000', reward: '₹1,000 Cash Award + Certificate of Merit', tier: 'bronze' },
       { rank: 'all', position: '🎖️ Participation', amount: 'Certificate', reward: 'Official Certificate of Participation for all participants', tier: 'participation' }
     ],
     rules: [
@@ -191,11 +210,18 @@ export const EVENTS_DATA = [
     godGlow: 'rgba(236,72,153,0.55)',
     bgImage: aphroditeImg,
     objective: 'To enhance creativity, storytelling, cinematography, and video editing skills through a time-bound reel-making competition.',
+    studentCoordinator: 'Adithyan C Sali',
+    studentCoordinatorPhone: '+91 62385 37931',
+    facultyCoordinator: 'Mr. Linu T James',
+    date: 'September 19, 2026',
+    time: '10:00 AM – 1:00 PM',
+    embedUrl: 'https://makemypass.com/event/reel-editing-echoes-of-eros/?type=embed',
+    registrationUrl: 'https://makemypass.com/event/reel-editing-echoes-of-eros/',
     theme: 'A Story Without Words – Every reel must include an unexpected plot twist around the halfway point (Emotional reveal).',
     registrationFee: '₹200 per team',
     prizePool: '₹8,000',
     prizePoolNum: 8000,
-    duration: '3 Hours (Instructions: 10m | Reel Shooting: 1h 50m | Editing & Submission: 1h)',
+    duration: '3 Hours (10:00 AM – 1:00 PM)',
     rounds: '3-Phase Timed Trial (1 Round)',
     roundDetails: [
       { round: 'Phase 1', name: 'Instructions & Briefing', marks: '10 Minutes', desc: 'Orientation on storyline themes, designated campus boundaries, and submission guidelines.' },
@@ -207,9 +233,9 @@ export const EVENTS_DATA = [
     eligibility: '+1, +2, and college students. College ID card is mandatory.',
     resourcesRequired: 'Smartphone/camera, laptop with video editing software, charging accessories, internet (if permitted), and stationery for planning.',
     prizes: [
-      { rank: '1st', position: '🥇 1st Prize', amount: '₹4,000', reward: '₹4,000 Cash Prize + Winner Trophy + Certificate of Merit', tier: 'gold' },
-      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹2,500', reward: '₹2,500 Cash Prize + Runner-up Trophy + Certificate of Merit', tier: 'silver' },
-      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,500', reward: '₹1,500 Cash Prize + Trophy + Certificate of Merit', tier: 'bronze' },
+      { rank: '1st', position: '🥇 1st Prize', amount: '₹4,000', reward: '₹4,000 Cash Award + Certificate of Merit', tier: 'gold' },
+      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹2,500', reward: '₹2,500 Cash Award + Certificate of Merit', tier: 'silver' },
+      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,500', reward: '₹1,500 Cash Award + Certificate of Merit', tier: 'bronze' },
       { rank: 'all', position: '🎖️ Participation', amount: 'Certificate', reward: 'Official Certificate of Participation for all team members', tier: 'participation' }
     ],
     rules: [
@@ -246,23 +272,30 @@ export const EVENTS_DATA = [
     godName: 'Helios',
     godTitle: 'Titan God of the Sun & Divine Velocity',
     godColor: '#0EA5E9',
-    godGlow: 'rgba(14,165,233,0.55)',
+    godGlow: 'rgba(147,197,253,0.55)',
     bgImage: poseidonImg,
     objective: 'To improve students\' typing speed and accuracy.',
+    studentCoordinator: 'Bibin Mathew',
+    studentCoordinatorPhone: '+91 85903 96006',
+    facultyCoordinator: 'Dr. Gemini George',
+    date: 'September 19, 2026',
+    time: '10:00 AM – 10:30 AM',
+    embedUrl: 'https://makemypass.com/event/speed-typing-competition-helios/?type=embed',
+    registrationUrl: 'https://makemypass.com/event/speed-typing-competition-helios/',
     theme: 'God – Poseidon / Sun & Speed',
     registrationFee: '₹50 per participant',
     prizePool: '₹5,000',
     prizePoolNum: 5000,
-    duration: 'Preliminary: 3 mins | Semi-Final: 3 mins | Final: 4 mins',
+    duration: '30 Minutes (10:00 AM – 10:30 AM)',
     rounds: '3 Rounds (R1: Basic passage -> Top 20; R2: Punctuation & numbers -> Top 10; R3: Advanced challenge)',
     participation: 'Individual',
     maxTeams: '100 Participants',
     eligibility: 'Open to all school students. Valid College/School ID Card required.',
     resourcesRequired: 'Individual workstation assigned in the computer lab.',
     prizes: [
-      { rank: '1st', position: '🥇 1st Prize', amount: '₹2,500', reward: '₹2,500 Cash Prize + Winner Trophy + Certificate of Merit', tier: 'gold' },
-      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹1,500', reward: '₹1,500 Cash Prize + Runner-up Trophy + Certificate of Merit', tier: 'silver' },
-      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,000', reward: '₹1,000 Cash Prize + Trophy + Certificate of Merit', tier: 'bronze' },
+      { rank: '1st', position: '🥇 1st Prize', amount: '₹2,500', reward: '₹2,500 Cash Award + Certificate of Merit', tier: 'gold' },
+      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹1,500', reward: '₹1,500 Cash Award + Certificate of Merit', tier: 'silver' },
+      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,000', reward: '₹1,000 Cash Award + Certificate of Merit', tier: 'bronze' },
       { rank: 'all', position: '🎖️ Participation', amount: 'Certificate', reward: 'Official Certificate of Participation for all participants', tier: 'participation' }
     ],
     rules: [
@@ -297,19 +330,26 @@ export const EVENTS_DATA = [
     godGlow: 'rgba(245,158,11,0.55)',
     bgImage: apolloImg,
     objective: 'Write a review based on the short film shown.',
+    studentCoordinator: 'Abhishek Prasad VP',
+    studentCoordinatorPhone: '+91 97441 72971',
+    facultyCoordinator: 'Dr. Gemini George',
+    date: 'September 19, 2026',
+    time: '10:00 AM – 10:45 AM',
+    embedUrl: 'https://makemypass.com/event/short-film-review-chronos/?type=embed',
+    registrationUrl: 'https://makemypass.com/event/short-film-review-chronos/',
     registrationFee: '₹50 per participant',
     prizePool: '₹5,000',
     prizePoolNum: 5000,
-    duration: '45 minutes',
+    duration: '45 Minutes (10:00 AM – 10:45 AM)',
     rounds: '1 Round',
     participation: 'Individual competition only (no team participation)',
     maxTeams: 'Open to school participants',
     eligibility: 'School students only. Participants must bring their ID card.',
     resourcesRequired: 'Pens and writing stationery.',
     prizes: [
-      { rank: '1st', position: '🥇 1st Prize', amount: '₹2,500', reward: '₹2,500 Cash Prize + Winner Trophy + Certificate of Merit', tier: 'gold' },
-      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹1,500', reward: '₹1,500 Cash Prize + Runner-up Trophy + Certificate of Merit', tier: 'silver' },
-      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,000', reward: '₹1,000 Cash Prize + Trophy + Certificate of Merit', tier: 'bronze' },
+      { rank: '1st', position: '🥇 1st Prize', amount: '₹2,500', reward: '₹2,500 Cash Award + Certificate of Merit', tier: 'gold' },
+      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹1,500', reward: '₹1,500 Cash Award + Certificate of Merit', tier: 'silver' },
+      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,000', reward: '₹1,000 Cash Award + Certificate of Merit', tier: 'bronze' },
       { rank: 'all', position: '🎖️ Participation', amount: 'Certificate', reward: 'Official Certificate of Participation for all participants', tier: 'participation' }
     ],
     rules: [
@@ -341,19 +381,26 @@ export const EVENTS_DATA = [
     godGlow: 'rgba(220,38,38,0.55)',
     bgImage: aresImg,
     objective: 'Promote esports, teamwork, fair play, and competitive gaming among students.',
+    studentCoordinator: 'Alby Benny',
+    studentCoordinatorPhone: '+91 87140 46578',
+    facultyCoordinator: 'Noel Martin',
+    date: 'September 19, 2026',
+    time: '10:00 AM Onwards',
+    embedUrl: 'https://makemypass.com/event/efootball-tournament-ares-golazo/?type=embed',
+    registrationUrl: 'https://makemypass.com/event/efootball-tournament-ares-golazo/',
     registrationFee: '₹100 per participant',
     prizePool: '₹6,000',
     prizePoolNum: 6000,
-    duration: 'Approximately 3–4 hours',
+    duration: 'Approximately 3–4 Hours (10:00 AM Onwards)',
     rounds: 'Round of 32 / Round of 16 / Quarter-finals / Semi-finals / Final (based on registrations)',
     participation: 'Individual (1 vs 1)',
     maxTeams: 'Based on registrations',
     eligibility: 'Open to registered participants before the deadline. School/College ID card is mandatory.',
     resourcesRequired: 'Smartphone with eFootball installed, stable internet connection, charger/power bank, and screenshot capability.',
     prizes: [
-      { rank: '1st', position: '🥇 1st Prize', amount: '₹3,000', reward: '₹3,000 Cash Prize + Winner Trophy + Certificate of Merit', tier: 'gold' },
-      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹2,000', reward: '₹2,000 Cash Prize + Runner-up Trophy + Certificate of Merit', tier: 'silver' },
-      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,000', reward: '₹1,000 Cash Prize + Trophy + Certificate of Merit', tier: 'bronze' },
+      { rank: '1st', position: '🥇 1st Prize', amount: '₹3,000', reward: '₹3,000 Cash Award + Certificate of Merit', tier: 'gold' },
+      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹2,000', reward: '₹2,000 Cash Award + Certificate of Merit', tier: 'silver' },
+      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹1,000', reward: '₹1,000 Cash Award + Certificate of Merit', tier: 'bronze' },
       { rank: 'all', position: '🎖️ Participation', amount: 'Certificate', reward: 'Official Certificate of Participation for all players', tier: 'participation' }
     ],
     rules: [
@@ -378,6 +425,111 @@ export const EVENTS_DATA = [
     judgingCriteria: [
       { criterion: 'Official Match Result', marks: 'Score Verification' },
       { criterion: 'Fair Play & Screenshot Verification', marks: 'Mandatory Submission' }
+    ]
+  }
+];
+
+export const SPOT_EVENTS_DATA = [
+  {
+    id: 'spot-01',
+    eventNum: 'SPOT_01',
+    title: 'Logo Guess',
+    subtitle: 'Brand & Tech Logo Identification',
+    category: 'spot',
+    categoryLabel: 'Spot Event',
+    icon: '🎯',
+    accentColor: '#06B6D4',
+    accentGlow: 'rgba(6,182,212,0.5)',
+    desc: 'Put your visual acuity and brand awareness to the test! Identify logos, subtle variations, and tech iconography in rapid on-the-spot rounds.',
+    isSpotEvent: true,
+    registrationNotice: 'Spot Registration Only · Register directly at the Venue Desk',
+    objective: 'To test participants\' observation, brand recognition, and visual problem-solving skills through a fast-paced on-the-spot logo challenge.',
+    studentCoordinator: 'Anagha R',
+    studentCoordinatorPhone: '+91 96055 32609',
+    facultyCoordinator: 'Noel Martin',
+    date: 'September 19, 2026',
+    time: '1:45 PM – 2:20 PM',
+    registrationFee: '₹30 per participant',
+    prizePool: '₹1,000',
+    prizePoolNum: 1000,
+    duration: '35 Minutes (1:45 PM – 2:20 PM)',
+    rounds: 'Spot Elimination Challenge',
+    roundDetails: [
+      { round: 'Round 1', name: 'Rapid Logo Identification', desc: 'Identify minimalist, cropped, or obscure technology and brand logos within 15 seconds each.' },
+      { round: 'Round 2', name: 'The Silhouette & Icon Finale', desc: 'Top scorers compete head-to-head in speed buzzer rounds to claim the championship.' }
+    ],
+    participation: 'Individual',
+    maxTeams: 'Open to all registered spot participants',
+    eligibility: 'Open to all students. Valid College/School ID card is mandatory.',
+    resourcesRequired: 'Stationery/pen provided at the spot registration desk.',
+    prizes: [
+      { rank: '1st', position: '🥇 1st Prize', amount: '₹500', reward: '₹500 Cash Award + Certificate of Merit', tier: 'gold' },
+      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹300', reward: '₹300 Cash Award + Certificate of Merit', tier: 'silver' },
+      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹200', reward: '₹200 Cash Award + Certificate of Merit', tier: 'bronze' },
+      { rank: 'all', position: '🎖️ Participation', amount: 'Certificate', reward: 'Official Certificate of Participation', tier: 'participation' }
+    ],
+    rules: [
+      'Registration fee: ₹30 per participant (spot registration at venue desk only).',
+      'Individual on-the-spot event.',
+      'No use of smartphones, Google Lens, or internet search tools during the challenge.',
+      'Points awarded for accuracy and response speed.',
+      'The decision of the coordinators and judges will be final and binding.'
+    ],
+    judgingCriteria: [
+      { criterion: 'Accuracy of Identification', marks: '50 Points' },
+      { criterion: 'Response Velocity & Precision', marks: '50 Points' }
+    ]
+  },
+  {
+    id: 'spot-02',
+    eventNum: 'SPOT_02',
+    title: 'AI Image Generation',
+    subtitle: 'Prompt Engineering & Visual Synthesis',
+    category: 'spot',
+    categoryLabel: 'Spot Event',
+    icon: '🎨',
+    accentColor: '#F97316',
+    accentGlow: 'rgba(249,115,22,0.5)',
+    desc: 'Craft high-impact AI prompts under tight time constraints. Bring imaginative scenarios to life and showcase prompt engineering prowess.',
+    isSpotEvent: true,
+    registrationNotice: 'Spot Registration Only · Register directly at the Venue Desk',
+    objective: 'To evaluate participants\' creativity, prompt engineering skills, visual storytelling, and aesthetic sense using modern generative AI tools.',
+    studentCoordinator: 'Anagha R',
+    studentCoordinatorPhone: '+91 96055 32609',
+    facultyCoordinator: 'Noel Martin',
+    date: 'September 19, 2026',
+    time: '1:45 PM – 2:15 PM',
+    registrationFee: '₹30 per participant',
+    prizePool: '₹1,000',
+    prizePoolNum: 1000,
+    duration: '30 Minutes (1:45 PM – 2:15 PM)',
+    rounds: 'Spot Prompt Engineering Trial',
+    roundDetails: [
+      { round: 'Prompting Stage', name: 'Creative Scenario Synthesis', desc: 'Receive a surprise thematic scenario and formulate precise prompts using assigned AI image generation tools.' },
+      { round: 'Curation & Presentation', name: 'Image Curation & Briefing', desc: 'Select top 2 generated renders and explain prompt craft decisions to the judges.' }
+    ],
+    participation: 'Individual',
+    maxTeams: 'Open to all registered spot participants',
+    eligibility: 'Open to all students. Valid College/School ID card is mandatory.',
+    resourcesRequired: 'Smartphone or provided terminal with internet access for prompt generation.',
+    prizes: [
+      { rank: '1st', position: '🥇 1st Prize', amount: '₹500', reward: '₹500 Cash Award + Certificate of Merit', tier: 'gold' },
+      { rank: '2nd', position: '🥈 2nd Prize', amount: '₹300', reward: '₹300 Cash Award + Certificate of Merit', tier: 'silver' },
+      { rank: '3rd', position: '🥉 3rd Prize', amount: '₹200', reward: '₹200 Cash Award + Certificate of Merit', tier: 'bronze' },
+      { rank: 'all', position: '🎖️ Participation', amount: 'Certificate', reward: 'Official Certificate of Participation', tier: 'participation' }
+    ],
+    rules: [
+      'Registration fee: ₹30 per participant (spot registration at venue desk only).',
+      'Individual on-the-spot event.',
+      'Participants must generate images strictly based on the prompt theme given on the spot.',
+      'Use of pre-generated images or external downloaded graphics is strictly prohibited.',
+      'Prompts used must be submitted along with the generated artworks.',
+      'The decision of the coordinators and jury will be final.'
+    ],
+    judgingCriteria: [
+      { criterion: 'Creativity & Theme Interpretation', marks: '40 Marks' },
+      { criterion: 'Prompt Engineering Complexity & Skill', marks: '35 Marks' },
+      { criterion: 'Visual Aesthetics & Quality', marks: '25 Marks' }
     ]
   }
 ];

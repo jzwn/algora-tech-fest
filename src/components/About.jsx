@@ -1,9 +1,9 @@
 import { useInView, useCountUp } from '../hooks/useInView';
 
 const stats = [
-  { num: '51K', prefix: '₹', label: 'Grand Prize Pool', isNum: false, isPrize: true },
+  { num: '54K', prefix: '₹', label: 'Grand Prize Pool', isNum: false, isPrize: true },
   { num: '07', label: 'Divine Trials', isNum: true },
-  { num: '03', label: 'Categories', isNum: true },
+  { num: '02', label: 'Spot Events', isNum: true },
   { num: '01', label: 'Inaugural Edition', isNum: true },
 ];
 
@@ -47,7 +47,7 @@ export default function About() {
           </p>
 
           <p className={`about-para reveal-up ${visible ? 'in' : ''}`} style={{ transitionDelay: '0.2s' }}>
-            Featuring 7 supreme trials consecrated under Greek deities with a cumulative <strong>₹51,000 Grand Prize Pool</strong>,
+            Featuring 7 supreme trials consecrated under Greek deities alongside 2 exciting spot challenges with a cumulative <strong>₹54,000 Grand Prize Pool</strong>,
             ALGORA provides a vibrant platform where students showcase technical expertise, creative talents,
             and problem-solving abilities.
           </p>

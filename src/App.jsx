@@ -31,7 +31,7 @@ export default function App() {
       <main className="main-content">
         <Hero onTriggerNotice={handleTriggerNotice} />
         <About />
-        <Events onOpenRegister={handleTriggerNotice} />
+        <Events />
         <Schedule />
         <Gallery />
         <Sponsors />

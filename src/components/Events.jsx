@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useInView } from '../hooks/useInView';
-import { EVENTS_DATA, GRAND_TOTAL_PRIZE_POOL } from '../data/eventsData';
+import { EVENTS_DATA, SPOT_EVENTS_DATA, GRAND_TOTAL_PRIZE_POOL } from '../data/eventsData';
 
 const tabs = [
   { key: 'all', label: 'All Events' },
@@ -11,7 +11,7 @@ const tabs = [
 
 const isFirefox = typeof navigator !== 'undefined' && /firefox/i.test(navigator.userAgent);
 
-export default function Events({ onOpenRegister }) {
+export default function Events() {
   const [activeTab, setActiveTab] = useState('all');
   const [activeModalEvent, setActiveModalEvent] = useState(null);
   const [modalView, setModalView] = useState('rules'); // 'rules' | 'register'
@@ -20,17 +20,14 @@ export default function Events({ onOpenRegister }) {
 
   const filteredEvents = activeTab === 'all'
     ? EVENTS_DATA
-    : EVENTS_DATA.filter(e => e.category === activeTab || (activeTab === 'college' && e.category === 'main'));
+    : EVENTS_DATA.filter(e => {
+        if (activeTab === 'college') return e.category === 'college' || e.category === 'main';
+        return e.category === activeTab;
+      });
 
   const handleOpenEventModal = (ev, view = 'rules') => {
     setActiveModalEvent(ev);
     setModalView(view);
-    setIframeLoading(true);
-  };
-
-  const handleRegisterClick = (event) => {
-    // Switch to ticket registration view directly
-    setModalView('register');
     setIframeLoading(true);
   };
 
@@ -47,7 +44,7 @@ export default function Events({ onOpenRegister }) {
 
       {/* Greek lore subtitle */}
       <p className={`events-lore reveal-up ${visible ? 'in' : ''}`} style={{ transitionDelay: '0.1s' }}>
-        Each trial is consecrated under a Greek deity — click Register on any event to view complete prize breakdown &amp; rules.
+        Each divine trial is consecrated under a Greek deity — click Register on any event to view complete prize breakdown, rules &amp; coordinators.
       </p>
 
       {/* Grand Prize Pool Attraction Banner */}
@@ -60,14 +57,14 @@ export default function Events({ onOpenRegister }) {
           <div className="grand-prize-text-col">
             <div className="grand-prize-pill-row">
               <span className="grand-prize-pill">✦ OLYMPIAN MEGA PRIZE POOL ✦</span>
-              <span className="grand-prize-stat-pill">7 DIVINE TRIALS</span>
+              <span className="grand-prize-stat-pill">7 DEITY TRIALS + 2 SPOT CHALLENGES</span>
             </div>
             <div className="grand-prize-amount-row">
               <span className="grand-prize-amount">{GRAND_TOTAL_PRIZE_POOL}</span>
               <span className="grand-prize-amount-label">CASH &amp; MERIT HONOURS</span>
             </div>
             <p className="grand-prize-desc">
-              Guaranteed Cash Prizes &amp; Trophies Across All 7 Trials · Flagship AI App Dev (<strong>₹12,000</strong>) &amp; Tech Treasure Hunt (<strong>₹10,000</strong>)
+              Guaranteed Cash Prizes &amp; Trophies Across All Competitions · Flagship AI App Dev (<strong>₹12,000</strong>), Tech Treasure Hunt (<strong>₹10,000</strong>), Reel Editing (<strong>₹8,000</strong>) &amp; more!
             </p>
           </div>
         </div>
@@ -86,7 +83,7 @@ export default function Events({ onOpenRegister }) {
         ))}
       </div>
 
-      {/* Events Grid */}
+      {/* 7 Main Events Grid */}
       <div className="ev-grid">
         {filteredEvents.map((ev, i) => (
           <div
@@ -145,7 +142,40 @@ export default function Events({ onOpenRegister }) {
                     💰 {ev.registrationFee}
                   </span>
                 )}
+
+                {ev.time && (
+                  <span className="ev-card-time-badge">
+                    🕒 {ev.time}
+                  </span>
+                )}
               </div>
+
+              {/* Quick Coordinator Chips */}
+              {(ev.studentCoordinator || ev.facultyCoordinator) && (
+                <div className="ev-card-coordinators">
+                  {ev.studentCoordinator && (
+                    <span className="ev-card-coord-tag student-tag">
+                      <span className="coord-icon">🎓</span>
+                      <span className="coord-name-text">{ev.studentCoordinator}</span>
+                      {ev.studentCoordinatorPhone && (
+                        <a
+                          href={`tel:${ev.studentCoordinatorPhone.replace(/\s+/g, '')}`}
+                          className="coord-phone-pill"
+                          onClick={(e) => e.stopPropagation()}
+                          title={`Call ${ev.studentCoordinator}`}
+                        >
+                          📞 {ev.studentCoordinatorPhone}
+                        </a>
+                      )}
+                    </span>
+                  )}
+                  {ev.facultyCoordinator && (
+                    <span className="ev-card-coord-tag faculty-tag">
+                      <span className="coord-icon">👨‍🏫</span> {ev.facultyCoordinator}
+                    </span>
+                  )}
+                </div>
+              )}
 
               <p className="ev-card-desc" style={{ marginTop: '12px' }}>{ev.desc}</p>
               
@@ -153,11 +183,119 @@ export default function Events({ onOpenRegister }) {
                 className="ev-card-btn"
                 onClick={() => handleOpenEventModal(ev, 'rules')}
               >
-                Register →
+                View Details &amp; Register →
               </button>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* ── SPOT REGISTRATION EVENTS DEDICATED SECTION ── */}
+      <div className={`spot-events-section reveal-up ${visible ? 'in' : ''}`} style={{ transitionDelay: '0.2s' }}>
+        <div className="spot-section-header">
+          <div className="spot-header-left">
+            <div className="spot-badge-pill">
+              <span className="spot-pulse-dot" />
+              <span>⚡ SPOT REGISTRATION ONLY</span>
+            </div>
+            <h3 className="spot-section-title">Spot Challenges</h3>
+            <p className="spot-section-subtitle">
+              On-the-spot registration only · Sign up directly at the venue registration desk on event day!
+            </p>
+          </div>
+          <div className="spot-header-right">
+            <div className="spot-pool-badge">
+              <span className="spot-pool-label">Combined Spot Pool</span>
+              <span className="spot-pool-amount">₹2,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="spot-events-grid">
+          {SPOT_EVENTS_DATA.map((spotEv) => (
+            <div
+              key={spotEv.id}
+              className="spot-event-card"
+              style={{
+                '--spot-accent': spotEv.accentColor,
+                '--spot-glow': spotEv.accentGlow,
+              }}
+            >
+              <div className="spot-card-top">
+                <div className="spot-card-num-badge">
+                  <span className="spot-num">{spotEv.eventNum}</span>
+                  <span className="spot-tag">⚡ Spot Event</span>
+                </div>
+                <span className="spot-desk-tag">Desk Sign-Up</span>
+              </div>
+
+              <div className="spot-card-main">
+                <span className="spot-card-icon">{spotEv.icon}</span>
+                <div className="spot-card-headings">
+                  <h4 className="spot-card-title">{spotEv.title}</h4>
+                  <div className="spot-card-subtitle">{spotEv.subtitle}</div>
+                </div>
+              </div>
+
+              <p className="spot-card-desc">{spotEv.desc}</p>
+
+              <div className="spot-card-specs">
+                <div className="spot-spec-pill highlight">
+                  <span>🏆 Pool:</span> <strong>{spotEv.prizePool}</strong>
+                </div>
+                <div className="spot-spec-pill">
+                  <span>💰 Entry:</span> <strong>{spotEv.registrationFee}</strong>
+                </div>
+                {spotEv.time && (
+                  <div className="spot-spec-pill time-pill">
+                    <span>🕒 Time:</span> <strong>{spotEv.time}</strong>
+                  </div>
+                )}
+                <div className="spot-spec-pill">
+                  <span>⏱️ Duration:</span> <strong>{spotEv.duration}</strong>
+                </div>
+              </div>
+
+              {(spotEv.studentCoordinator || spotEv.facultyCoordinator) && (
+                <div className="spot-card-coords">
+                  {spotEv.studentCoordinator && (
+                    <span className="spot-coord-item">
+                      <span>🎓 {spotEv.studentCoordinator}</span>
+                      {spotEv.studentCoordinatorPhone && (
+                        <a
+                          href={`tel:${spotEv.studentCoordinatorPhone.replace(/\s+/g, '')}`}
+                          className="spot-coord-phone-link"
+                          onClick={(e) => e.stopPropagation()}
+                          title={`Call ${spotEv.studentCoordinator}`}
+                        >
+                          📞 {spotEv.studentCoordinatorPhone}
+                        </a>
+                      )}
+                    </span>
+                  )}
+                  {spotEv.facultyCoordinator && (
+                    <span className="spot-coord-item">
+                      👨‍🏫 {spotEv.facultyCoordinator}
+                    </span>
+                  )}
+                </div>
+              )}
+
+              <div className="spot-card-actions">
+                <button
+                  type="button"
+                  className="spot-details-btn"
+                  onClick={() => handleOpenEventModal(spotEv, 'rules')}
+                >
+                  View Rules &amp; Details →
+                </button>
+                <span className="spot-onsite-notice">
+                  📍 Sign up at Venue Desk
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* ── EVENT DETAILS MODAL POP-UP ── */}
@@ -166,8 +304,8 @@ export default function Events({ onOpenRegister }) {
           className={`event-modal-overlay ${modalView === 'register' ? 'is-register-overlay' : ''}`}
           onClick={() => setActiveModalEvent(null)}
           style={{
-            '--god-color': activeModalEvent.godColor || 'var(--purple)',
-            '--god-glow': activeModalEvent.godGlow || 'var(--purple-glow)',
+            '--god-color': activeModalEvent.godColor || activeModalEvent.accentColor || 'var(--purple)',
+            '--god-glow': activeModalEvent.godGlow || activeModalEvent.accentGlow || 'var(--purple-glow)',
           }}
         >
           <div
@@ -191,11 +329,22 @@ export default function Events({ onOpenRegister }) {
                   </button>
 
                   <div className="modal-header-top-row">
-                    <span className="modal-god-subtitle">
-                      {activeModalEvent.godName} · {activeModalEvent.godTitle}
-                    </span>
+                    {activeModalEvent.godName ? (
+                      <span className="modal-god-subtitle">
+                        {activeModalEvent.godName} · {activeModalEvent.godTitle}
+                      </span>
+                    ) : (
+                      <span className="modal-god-subtitle" style={{ color: activeModalEvent.accentColor || 'var(--gold)' }}>
+                        ⚡ SPOT EVENT · ON-THE-SPOT REGISTRATION
+                      </span>
+                    )}
                     {activeModalEvent.isMainEvent && (
                       <span className="modal-flagship-pill">⭐ Flagship Marquee Trial</span>
+                    )}
+                    {activeModalEvent.isSpotEvent && (
+                      <span className="modal-flagship-pill" style={{ background: 'rgba(6, 182, 212, 0.15)', borderColor: 'rgba(6, 182, 212, 0.4)', color: '#22d3ee' }}>
+                        📍 Desk Registration Only
+                      </span>
                     )}
                     {activeModalEvent.prizePool && (
                       <span className="modal-header-prize-pill">
@@ -214,26 +363,33 @@ export default function Events({ onOpenRegister }) {
                     </div>
                   )}
 
-                  {/* View Switcher Tabs */}
-                  <div className="modal-view-tabs">
-                    <button
-                      type="button"
-                      className="modal-view-tab-btn active"
-                      onClick={() => setModalView('rules')}
-                    >
-                      <span>📜</span> Rules &amp; Regulations
-                    </button>
-                    <button
-                      type="button"
-                      className="modal-view-tab-btn"
-                      onClick={() => {
-                        setModalView('register');
-                        setIframeLoading(true);
-                      }}
-                    >
-                      <span>🎟️</span> Ticket Registration {activeModalEvent.embedUrl && <span style={{ color: 'var(--gold)' }}>● Live</span>}
-                    </button>
-                  </div>
+                  {/* View Switcher Tabs (Only for online registered events) */}
+                  {!activeModalEvent.isSpotEvent ? (
+                    <div className="modal-view-tabs">
+                      <button
+                        type="button"
+                        className="modal-view-tab-btn active"
+                        onClick={() => setModalView('rules')}
+                      >
+                        <span>📜</span> Rules &amp; Event Details
+                      </button>
+                      <button
+                        type="button"
+                        className="modal-view-tab-btn"
+                        onClick={() => {
+                          setModalView('register');
+                          setIframeLoading(true);
+                        }}
+                      >
+                        <span>🎟️</span> Ticket Registration {activeModalEvent.embedUrl && <span style={{ color: 'var(--gold)' }}>● Live</span>}
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="modal-spot-banner-note">
+                      <span>📍</span>
+                      <span><strong>Spot Registration Only:</strong> Register directly at the Venue Spot Desk on September 19, 2026. Online registration is not required.</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Rules Scrollable Body */}
@@ -243,7 +399,7 @@ export default function Events({ onOpenRegister }) {
                     <div className="modal-prize-section">
                       <div className="modal-section-title-wrap">
                         <h4 className="modal-section-title" style={{ borderBottom: 'none', marginBottom: 0, paddingBottom: 0 }}>
-                          <span>👑</span> Prize Distribution &amp; Podium Rewards
+                          <span>👑</span> Prize Distribution &amp; Rewards
                         </h4>
                         {activeModalEvent.prizePool && (
                           <span className="modal-section-prize-highlight">
@@ -269,12 +425,81 @@ export default function Events({ onOpenRegister }) {
                     </div>
                   )}
 
+                  {/* 👥 EVENT COORDINATORS SECTION */}
+                  {(activeModalEvent.studentCoordinator || activeModalEvent.facultyCoordinator) && (
+                    <div className="modal-coordinators-section">
+                      <h4 className="modal-section-title">
+                        <span>👥</span> Event Coordinators
+                      </h4>
+                      <div className="modal-coordinators-grid">
+                        {activeModalEvent.studentCoordinator && (
+                          <div className="coordinator-card student-coord">
+                            <div className="coordinator-card-inner">
+                              <div className="coordinator-avatar-wrap">
+                                <span className="coord-avatar-icon">🎓</span>
+                              </div>
+                              <div className="coordinator-info">
+                                <span className="coordinator-role">Student Coordinator</span>
+                                <div className="coordinator-name">{activeModalEvent.studentCoordinator}</div>
+                                {activeModalEvent.studentCoordinatorPhone && (
+                                  <div className="coordinator-phone-actions">
+                                    <a
+                                      href={`tel:${activeModalEvent.studentCoordinatorPhone.replace(/\s+/g, '')}`}
+                                      className="coord-call-btn"
+                                      title={`Call ${activeModalEvent.studentCoordinator}`}
+                                    >
+                                      <span className="coord-btn-icon">📞</span>
+                                      <span>{activeModalEvent.studentCoordinatorPhone}</span>
+                                    </a>
+                                    <a
+                                      href={`https://wa.me/${activeModalEvent.studentCoordinatorPhone.replace(/[^0-9]/g, '')}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="coord-wa-btn"
+                                      title={`Chat with ${activeModalEvent.studentCoordinator} on WhatsApp`}
+                                    >
+                                      <span className="coord-btn-icon">💬</span>
+                                      <span>WhatsApp</span>
+                                    </a>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                        {activeModalEvent.facultyCoordinator && (
+                          <div className="coordinator-card faculty-coord">
+                            <div className="coordinator-card-inner">
+                              <div className="coordinator-avatar-wrap">
+                                <span className="coord-avatar-icon">👨‍🏫</span>
+                              </div>
+                              <div className="coordinator-info">
+                                <span className="coordinator-role">Faculty Coordinator</span>
+                                <div className="coordinator-name">{activeModalEvent.facultyCoordinator}</div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Quick Specification Cards */}
                   <div className="modal-specs-section">
                     <h4 className="modal-section-title">
                       <span>⚡</span> Event Specifications
                     </h4>
                     <div className="modal-specs-grid">
+                      {activeModalEvent.time && (
+                        <div className="spec-card highlight-gold">
+                          <span className="spec-label">🕒 Event Time (Sep 19)</span>
+                          <span className="spec-value highlight-gold">{activeModalEvent.time}</span>
+                        </div>
+                      )}
+                      <div className="spec-card">
+                        <span className="spec-label">📅 Date</span>
+                        <span className="spec-value">{activeModalEvent.date || 'September 19, 2026'}</span>
+                      </div>
                       <div className="spec-card">
                         <span className="spec-label">🏆 Total Prize Pool</span>
                         <span className="spec-value highlight-gold">{activeModalEvent.prizePool || 'Cash Prizes'}</span>
@@ -397,43 +622,62 @@ export default function Events({ onOpenRegister }) {
                 {/* Rules Modal Footer */}
                 <div className="event-modal-footer">
                   <div className="modal-footer-info">
-                    <span className="modal-footer-evt">EVT_{activeModalEvent.id} · Consecrated by {activeModalEvent.godName}</span>
+                    <span className="modal-footer-evt">
+                      {activeModalEvent.isSpotEvent ? `SPOT EVENT · ${activeModalEvent.title}` : `EVT_${activeModalEvent.id} · Consecrated by ${activeModalEvent.godName}`}
+                    </span>
                     <span className="modal-footer-prize">🏆 Total Prize: {activeModalEvent.prizePool}</span>
                   </div>
-                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
-                    {activeModalEvent.embedUrl && (
+                  <div className="modal-footer-actions">
+                    {activeModalEvent.isSpotEvent ? (
                       <button
                         type="button"
-                        className="modal-back-btn"
-                        onClick={() => {
-                          setModalView('register');
-                          setIframeLoading(true);
-                        }}
+                        className="modal-register-btn primary-highlight-btn"
+                        onClick={() => setActiveModalEvent(null)}
+                        style={{ background: 'linear-gradient(135deg, #06b6d4, #0891b2)', borderColor: '#22d3ee', width: '100%', justifyContent: 'center' }}
                       >
-                        ⚡ Embedded View
+                        📍 Register On-The-Spot at Desk (Got It)
                       </button>
-                    )}
-                    {activeModalEvent.registrationUrl ? (
-                      <a
-                        href={activeModalEvent.registrationUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="modal-register-btn"
-                        style={{ textDecoration: 'none' }}
-                      >
-                        Register on MakeMyPass ↗
-                      </a>
                     ) : (
-                      <button
-                        type="button"
-                        className="modal-register-btn"
-                        onClick={() => {
-                          setModalView('register');
-                          setIframeLoading(true);
-                        }}
-                      >
-                        Register for {activeModalEvent.title.split(' - ')[0]} →
-                      </button>
+                      <>
+                        {activeModalEvent.registrationUrl && (
+                          <a
+                            href={activeModalEvent.registrationUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="modal-makemypass-ext-btn"
+                            title="Register on MakeMyPass in a new window"
+                          >
+                            <div className="makemypass-btn-inner">
+                              <span className="makemypass-btn-title">
+                                <span>MakeMyPass</span>
+                                <svg className="makemypass-tab-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                  <polyline points="15 3 21 3 21 9" />
+                                  <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                              </span>
+                              <span className="makemypass-btn-subtext">open in new tab</span>
+                            </div>
+                          </a>
+                        )}
+
+                        <button
+                          type="button"
+                          className="modal-register-btn primary-highlight-btn"
+                          onClick={() => {
+                            setModalView('register');
+                            setIframeLoading(true);
+                          }}
+                        >
+                          <div className="makemypass-btn-inner">
+                            <span className="makemypass-btn-title" style={{ fontFamily: 'var(--cinzel)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                              <span>⚡ Register Now</span>
+                              <span style={{ fontSize: '0.9rem', lineHeight: 1 }}>→</span>
+                            </span>
+                            <span className="makemypass-btn-subtext" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>instant booking</span>
+                          </div>
+                        </button>
+                      </>
                     )}
                   </div>
                 </div>
@@ -448,7 +692,8 @@ export default function Events({ onOpenRegister }) {
                       className="reg-header-back-btn"
                       onClick={() => setModalView('rules')}
                     >
-                      ← Back to Rules
+                      <span className="reg-back-full-text">← Back to Rules &amp; Details</span>
+                      <span className="reg-back-short-text">← Back</span>
                     </button>
                     <div className="reg-header-title-wrap">
                       <span className="reg-header-icon">{activeModalEvent.icon}</span>
@@ -466,7 +711,8 @@ export default function Events({ onOpenRegister }) {
                         className="reg-header-ext-btn"
                         title="Open portal in separate tab"
                       >
-                        Open in New Tab ↗
+                        <span className="reg-ext-full-text">Open in New Tab ↗</span>
+                        <span className="reg-ext-short-text">↗</span>
                       </a>
                     )}
                     <button
@@ -484,9 +730,15 @@ export default function Events({ onOpenRegister }) {
                   <div className={`reg-iframe-fallback-bar ${isFirefox ? 'firefox-alert' : ''}`}>
                     <span className="fallback-text">
                       {isFirefox ? (
-                        <>🦊 <strong>Firefox Enhanced Tracking Protection</strong> blocks third-party embedded forms by default.</>
+                        <>
+                          <span className="fallback-full-text">🦊 <strong>Firefox Enhanced Tracking Protection</strong> blocks third-party embedded forms by default.</span>
+                          <span className="fallback-short-text">🦊 <strong>Firefox ETP</strong> may block embed.</span>
+                        </>
                       ) : (
-                        <>⚡ <strong>Embedded Checkout</strong> · Instant ticket booking powered by MakeMyPass.</>
+                        <>
+                          <span className="fallback-full-text">⚡ <strong>Embedded Checkout</strong> · Instant ticket booking powered by MakeMyPass.</span>
+                          <span className="fallback-short-text">⚡ <strong>Instant Checkout</strong> · via MakeMyPass</span>
+                        </>
                       )}
                     </span>
                     <a
@@ -494,8 +746,10 @@ export default function Events({ onOpenRegister }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="fallback-btn"
+                      title="Open checkout in new window"
                     >
-                      Open in New Tab ↗
+                      <span className="fallback-btn-full">Open in New Tab ↗</span>
+                      <span className="fallback-btn-short">New Tab ↗</span>
                     </a>
                   </div>
                 )}
@@ -541,14 +795,14 @@ export default function Events({ onOpenRegister }) {
                       <h3 className="modal-coming-soon-title">Registration Opening Soon</h3>
                       <p className="modal-coming-soon-desc">
                         The official registration portal for <strong>{activeModalEvent.title}</strong> is being linked.
-                        Check back shortly or review the competition rules and guidelines!
+                        Check back shortly or contact <strong>{activeModalEvent.studentCoordinator || 'event coordinators'}</strong> for inquiries!
                       </p>
                       <button
                         type="button"
                         className="modal-back-btn"
                         onClick={() => setModalView('rules')}
                       >
-                        ← Back to Rules &amp; Overview
+                        ← Back to Rules &amp; Details
                       </button>
                     </div>
                   )}

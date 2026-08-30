@@ -3,42 +3,41 @@ export default function NoticeModal({ isOpen, onClose }) {
 
   return (
     <div
-      className="event-modal-overlay"
+      className="inapp-modal-overlay"
       onClick={onClose}
       style={{ zIndex: 10000 }}
     >
       <div
-        className="event-modal-container"
+        className="inapp-modal-container"
         onClick={e => e.stopPropagation()}
-        style={{ maxWidth: '480px', textAlign: 'center', padding: '36px 28px' }}
       >
         <button
-          className="event-modal-close"
+          className="inapp-modal-close"
           onClick={onClose}
           aria-label="Close notice"
         >
           ✕
         </button>
 
-        <div style={{ fontSize: '3rem', marginBottom: '16px', filter: 'drop-shadow(0 0 12px var(--gold-glow))' }}>
+        <div className="inapp-modal-icon">
           ⚡
         </div>
 
-        <h3 style={{ fontFamily: 'var(--cinzel)', fontSize: '1.4rem', color: 'var(--gold)', textTransform: 'uppercase', marginBottom: '12px', letterSpacing: '2px', textShadow: '0 0 12px var(--gold-glow)' }}>
+        <h3 className="inapp-modal-title">
           Will Be Added Soon!
         </h3>
 
-        <p style={{ fontFamily: 'var(--barlow)', fontSize: '0.95rem', color: 'rgba(230,230,250,0.9)', lineHeight: 1.6, marginBottom: '24px' }}>
+        <p className="inapp-modal-body">
           The official external registration portal for <strong>ALGORA 2026</strong> is currently being prepared. Registration links will be live soon!
         </p>
 
-        <div style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--purple-light)', background: 'rgba(124, 58, 237, 0.12)', padding: '10px 14px', borderRadius: '4px', border: '1px solid var(--purple-border)', marginBottom: '24px', letterSpacing: '1px' }}>
+        <div className="inapp-modal-badge">
           ST. GEORGE'S COLLEGE · ARUVITHURA
         </div>
 
         <button
-          className="modal-register-btn"
-          style={{ width: '100%', justifyContent: 'center' }}
+          className="inapp-modal-btn-primary"
+          style={{ width: '100%' }}
           onClick={onClose}
         >
           Got It, Understood! →

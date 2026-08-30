@@ -67,7 +67,7 @@ export default function Hero({ onTriggerNotice }) {
           <h2 className="hero-col-title">Tech Fest · 2026</h2>
           <p className="hero-col-body">
             The inaugural techno-cultural festival of the Department of Computer Applications —
-            celebrating innovation, creativity, and collaboration with ₹51,000 in grand prizes.
+            celebrating innovation, creativity, and collaboration with ₹54,000 in grand prizes.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function Hero({ onTriggerNotice }) {
         <div className="hero-col">
           <p className="hero-col-body" style={{ paddingTop: '30px' }}>
             ALGORA brings together the brightest minds, the boldest ideas, and the most creative spirits
-            through 7 consecrated deity trials that push the boundaries of technology.
+            through 7 consecrated deity trials and dynamic spot challenges that push the boundaries of technology.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export default function Hero({ onTriggerNotice }) {
               href="#events"
               onClick={e => { e.preventDefault(); document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' }); }}
             >
-              Explore Events (₹51K)
+              Explore Events (₹54K)
             </a>
             <button
               className="btn-outline"

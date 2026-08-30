@@ -7,7 +7,7 @@ export default function Navbar({ onTriggerNotice }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
-  const { permissionStatus, requestPermission, pushNotifications } = useMessaging();
+  const { pushNotifications } = useMessaging();
   const { campaigns } = useRemoteConfig();
 
   const activeCampaigns = (campaigns || []).filter(c => c && c.enabled !== false && c.enabled !== 'false');
@@ -68,25 +68,38 @@ export default function Navbar({ onTriggerNotice }) {
               />
             </div>
 
-            <button
+            <a
+              href="#events"
               className="nav-register"
-              onClick={onTriggerNotice}
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Register
-            </button>
+            </a>
             
-            <div style={{
-              marginLeft: '16px',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-end',
-              lineHeight: '1.1',
-              borderLeft: '1px solid rgba(255,255,255,0.1)',
-              paddingLeft: '16px'
-            }}>
-              <span style={{ fontFamily: 'var(--condensed)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '1px', color: 'var(--white)' }}>St.George's</span>
+            <a
+              href="https://sgcaruvithura.ac.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-college-link"
+              title="Visit St. George's College Aruvithura official website (sgcaruvithura.ac.in)"
+              style={{
+                marginLeft: '16px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-end',
+                lineHeight: '1.1',
+                borderLeft: '1px solid rgba(255,255,255,0.1)',
+                paddingLeft: '16px',
+                textDecoration: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              <span style={{ fontFamily: 'var(--condensed)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '1px', color: 'var(--white)', transition: 'color 0.2s ease' }}>St.George's</span>
               <span style={{ fontFamily: 'var(--condensed)', fontSize: '0.55rem', letterSpacing: '0.5px', color: 'var(--gray)' }}>College Aruvithura</span>
-            </div>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -127,15 +140,17 @@ export default function Navbar({ onTriggerNotice }) {
           <span>View Notifications</span>
         </button>
 
-        <button
+        <a
+          href="#events"
           className="mobile-register-btn"
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             setMenuOpen(false);
-            if (onTriggerNotice) onTriggerNotice();
+            document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
           Register Now →
-        </button>
+        </a>
       </div>
     </>
   );
