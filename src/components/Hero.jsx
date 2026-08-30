@@ -18,9 +18,9 @@ export default function Hero({ onTriggerNotice }) {
 
         {/* Brand name under logo */}
         <div style={{
-          fontFamily: 'var(--cinzel)',
-          fontSize: '0.65rem',
-          letterSpacing: '10px',
+          fontFamily: 'var(--audiowide)',
+          fontSize: '0.68rem',
+          letterSpacing: '12px',
           textTransform: 'uppercase',
           color: 'var(--gold)',
           marginBottom: '12px',

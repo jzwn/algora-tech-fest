@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Caesar+Dressing&family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -37,6 +37,7 @@
   --border-subtle: rgba(255, 255, 255, 0.06);
 
   /* ── Typography ── */
+  --audiowide: 'Audiowide', cursive, sans-serif;
   --caesar: 'Caesar Dressing', cursive, serif;
   --cinzel: 'Cinzel', serif;
   --cinzel-deco: 'Cinzel Decorative', serif;
@@ -1138,10 +1139,10 @@ img {
 }
 
 .hero-title {
-  font-family: var(--caesar);
-  font-size: clamp(72px, 12vw, 150px);
-  line-height: 0.88;
-  letter-spacing: 6px;
+  font-family: var(--audiowide);
+  font-size: clamp(64px, 11vw, 138px);
+  line-height: 0.95;
+  letter-spacing: clamp(6px, 1.5vw, 14px);
   color: transparent;
   text-transform: uppercase;
   position: relative;
