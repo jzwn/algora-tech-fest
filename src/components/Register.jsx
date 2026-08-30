@@ -60,13 +60,17 @@ export default function Register({ onTriggerNotice }) {
               Official registrations for all college, school, general, and spot events are conducted via our centralized external portal.
             </p>
 
-            <button
+            <a
               className="reg-big-btn"
-              onClick={onTriggerNotice}
+              href="#events"
+              onClick={e => {
+                e.preventDefault();
+                document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
-              <span className="reg-btn-label">Go to Registration Portal →</span>
-              <span className="reg-btn-status">External Link · Will Be Added Soon</span>
-            </button>
+              <span className="reg-btn-label">Select Event &amp; Register →</span>
+              <span className="reg-btn-status">⚡ Live on MakeMyPass · Instant Booking</span>
+            </a>
 
             <div className="register-panel-date" style={{ marginTop: '24px' }}>
               <div className="register-panel-label" style={{ marginBottom: '4px' }}>📅 Date of the Trials</div>

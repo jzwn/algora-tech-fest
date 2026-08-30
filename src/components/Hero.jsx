@@ -90,12 +90,16 @@ export default function Hero({ onTriggerNotice }) {
             >
               Explore Events (₹54K)
             </a>
-            <button
+            <a
               className="btn-outline"
-              onClick={onTriggerNotice}
+              href="#events"
+              onClick={e => {
+                e.preventDefault();
+                document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Register Now →
-            </button>
+            </a>
           </div>
         </div>
       </div>

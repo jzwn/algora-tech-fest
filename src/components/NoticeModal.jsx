@@ -24,11 +24,11 @@ export default function NoticeModal({ isOpen, onClose }) {
         </div>
 
         <h3 className="inapp-modal-title">
-          Will Be Added Soon!
+          Registrations Live!
         </h3>
 
         <p className="inapp-modal-body">
-          The official external registration portal for <strong>ALGORA 2026</strong> is currently being prepared. Registration links will be live soon!
+          Online registrations and ticket booking for <strong>ALGORA 2026</strong> are now officially open on MakeMyPass! Explore the events section to register.
         </p>
 
         <div className="inapp-modal-badge">
@@ -38,9 +38,12 @@ export default function NoticeModal({ isOpen, onClose }) {
         <button
           className="inapp-modal-btn-primary"
           style={{ width: '100%' }}
-          onClick={onClose}
+          onClick={() => {
+            onClose();
+            document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+          }}
         >
-          Got It, Understood! →
+          Explore Events &amp; Register →
         </button>
       </div>
     </div>

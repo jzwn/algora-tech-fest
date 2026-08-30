@@ -405,7 +405,7 @@ export const EVENTS_DATA = [
     ],
     rules: [
       'Registration fee: ₹100 per participant.',
-      'Only Highlight Cards allowed (Booster Managers allowed).',
+      'All cards accepted.',
       'Dream Team / Authentic Team.',
       'Match Duration: 6 minutes.',
       'Extra Time & Penalties: ON.',
