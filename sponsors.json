@@ -50,5 +50,22 @@
     "website": "https://www.instagram.com/ajwakuzhimandhi/",
     "tier": "",
     "priority": 2.1
-  }
+  },
+  {
+    "id": "vampireholidays",
+    "name": "Vampire Holidays",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/VampireHolidays_logo.jpeg",
+    "website": "https://www.instagram.com/vampireholidays/",
+    "tier": "",
+    "priority": 2.2
+  },
+    {
+    "id": "planeatrestocafe",
+    "name": "Plan Eat Resto Cafe",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/PlanEatRestoCafe_logo.png",
+    "website": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/PlanEatPromo_video.MP4",
+    "link_2": "https://www.instagram.com/plan_eat_restocafe/",
+    "tier": "",
+    "priority": 2.3
+  },
 ]
