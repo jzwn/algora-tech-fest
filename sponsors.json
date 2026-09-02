@@ -67,5 +67,21 @@
     "link_2": "https://www.instagram.com/plan_eat_restocafe/",
     "tier": "",
     "priority": 2.3
+  },
+  {
+    "id": "eeveweddingplanners",
+    "name": "Eeve Wedding Planners",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/EeveWeddingPlanners_logo.png",
+    "website": "https://www.instagram.com/eeve_wed_planners",
+    "tier": "",
+    "priority": 2.2
+  },
+    {
+    "id": "alleppeylatex",
+    "name": "Alleppey Latex",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/AlleppeyLatex_logo.svg",
+    "website": "https://www.alleppeylatex.com/",
+    "tier": "",
+    "priority": 2.2
   }
 ]
