@@ -42,5 +42,13 @@
     "link_2": "https://www.instagram.com/leather_world_erattupetta/",
     "tier": "",
     "priority": 1.2
-  }
+  },
+  {
+    "id": "ajwafoodpark",
+    "name": "Ajwa Food Park",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/AjwaFoodPark_logo.png",
+    "website": "https://www.instagram.com/ajwakuzhimandhi/",
+    "tier": "",
+    "priority": 2.1
+  },
 ]
