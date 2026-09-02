@@ -33,5 +33,14 @@
     "website": "https://maps.google.com/maps?cid=2597747401552595680",
     "tier": "",
     "priority": 1.1
-  }
+  },
+  {
+    "id": "leatherworld",
+    "name": "Leather World",
+    "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/LeatherWorld_Logo.png",
+    "website": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/LeatherWorld_promo_video.mp4",
+    "link_2": "https://www.instagram.com/leather_world_erattupetta/",
+    "tier": "",
+    "priority": 1.2
+  },
 ]
