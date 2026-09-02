@@ -4,7 +4,6 @@
     "name": "Nice",
     "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/nice_logo.png",
     "website": "https://www.nicefoods.in/",
-    "link_2": "https://brandwebsite.com",
     "tier": "",
     "priority": 3.5
   },
@@ -12,8 +11,8 @@
     "id": "ponthanal",
     "name": "Ponthanal Silk House",
     "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/ponthanal_logo.jpeg",
-    "website": "https://www.instagram.com/ponthanal_silkhouse/",
-    "link_2": "https://brandwebsite.com",
+    "website": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/PonthanalSilkHouse_promo_video.mp4",
+    "link_2": "https://www.instagram.com/ponthanal_silkhouse",
     "tier": "Title Sponsor",
     "priority": 3.1
   },
@@ -22,7 +21,6 @@
     "name": "Denmark Mens Outlet",
     "logo": "https://raw.githubusercontent.com/jzwn/algora-tech-fest/main/sponsors-assets/denmark_logo.png",
     "website": "https://www.instagram.com/denmark.mensoutlet/?hl=en",
-    "link_2": "https://brandwebsite.com",
     "tier": "Gold Sponsor",
     "priority": 3.3
   },
